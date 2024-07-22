@@ -1,3 +1,9 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@font-face {
+    font-family: "Chakra_Petch";
+    src: local("ChakraPetch-Medium") 
+    url("/public/fonts/ChakraPetch-Medium.ttf") format("truetype");
+}

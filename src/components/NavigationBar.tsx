@@ -1,31 +1,38 @@
 "use client";
 import { FloatingNav } from "./ui/floating-navbar.tsx";
-// import { IconHome, IconMessage, IconUser } from //
+import keypress_0 from "../assets/keyboard_key_0.png";
+import keypress_1 from "../assets/keyboard_key_1.png";
+import keypress_2 from "../assets/keyboard_key_2.png";
+import keypress_3 from "../assets/keyboard_key_3.png";
+import keypress_4 from "../assets/keyboard_key_4.png";
 
-
-
-export const NavigationBar = () =>{
-
+export const NavigationBar = () => {
   const navItems = [
     {
       name: "Home",
       link: "/",
-    //   icon: <IconHome className="h-4 w-4 text-neutral-500 dark:text-white" />,/
+      icon: keypress_0,
     },
     {
-      name: "About",
-      link: "/about",
-    //   icon: <IconUser className="h-4 w-4 text-neutral-500 dark:text-white" />
+      name: "Education",
+      link: "/",
+      icon: keypress_1,
     },
     {
-      name: "Contact",
-      link: "/contact",
-    //   icon: (
-    //     <IconMessage className="h-4 w-4 text-neutral-500 dark:text-white" />
-    //   ),
+      name: "Work",
+      link: "/",
+      icon: keypress_2,
+    },
+    {
+      name: "Projects",
+      link: "/",
+      icon: keypress_3,
+    },
+    {
+      name: "Skill",
+      link: "/",
+      icon: keypress_4,
     },
   ];
-    return(
-        <FloatingNav navItems={navItems} />
-    )
-}
+  return <FloatingNav navItems={navItems} />;
+};

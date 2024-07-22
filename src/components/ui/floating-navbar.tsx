@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 "use client";
 import { useState } from "react";
 import {
@@ -9,12 +10,13 @@ import {
 import { cn } from "../../utils/cn";
 
 export const FloatingNav = ({
+  navItems,
   className,
 }: {
   navItems: {
     name: string;
     link: string;
-    icon?: JSX.Element;
+    icon?: string;
   }[];
   className?: string;
 }) => {
@@ -27,7 +29,7 @@ export const FloatingNav = ({
     if (typeof current === "number") {
       const direction = current! - scrollYProgress.getPrevious()!;
 
-      if (scrollYProgress.get() < 0.0) {
+      if (scrollYProgress.get() < 0) {
         setVisible(false);
       } else {
         if (direction < 0) {
@@ -51,22 +53,32 @@ export const FloatingNav = ({
           opacity: visible ? 1 : 0,
         }}
         transition={{
-          duration: 0.4,
+          duration: 0.2,
         }}
         className={cn(
-          "fixed right-20 top-5 z-[5000] mx-auto flex max-w-fit  space-x-4 rounded-full border border-transparent bg-white py-2 pl-5 pr-5 shadow-[0px_2px_3px_-1px_rgba(0,0,0,0.1),0px_1px_0px_0px_rgba(25,28,33,0.02),0px_0px_0px_1px_rgba(25,28,33,0.08)] dark:border-white/[0.2] dark:bg-black",
+          "fixed right-20 top-7 z-[5000] mx-auto flex max-w-fit space-x-4 rounded-full dark:border dark:border-[#38ffd1] dark:bg-[#ace1df0a] py-2 pl-5 pr-5  dark:border-white/[0.2]",
           className,
         )}
       >
-        <span className="relative rounded-full text-sm font-medium text-black dark:border-white/[0.2] dark:text-white">
-          Home
-        </span>
-        <span className="relative rounded-full text-sm font-medium text-black dark:border-white/[0.2] dark:text-white">
-          Project
-        </span>
-        <span className="relative rounded-full text-sm font-medium text-black dark:border-white/[0.2] dark:text-white">
-          Work
-        </span>
+        {navItems.map((navItem: any, idx: number) => (
+          <a
+            key={`link=${idx}`}
+            href={navItem.link}
+            className={cn(
+              "relative flex items-center space-x-1 font-medium text-neutral-600 hover:text-neutral-500 dark:text-neutral-100 dark:hover:text-neutral-700 dark:hover:underline-offset-auto  dark:hover:",
+            )}
+          >
+            {navItem.icon && (
+              <img
+                src={navItem.icon}
+                alt={navItem.name}
+                className="h-7 w-7 mix-blend-multiply"
+              />
+            )}
+            <span className="block sm:hidden">{navItem.icon}</span>
+            <span className="text-m hidden sm:block">{navItem.name}</span>
+          </a>
+        ))}
       </motion.div>
     </AnimatePresence>
   );
