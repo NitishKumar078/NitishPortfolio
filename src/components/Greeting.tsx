@@ -7,23 +7,23 @@ export const Greeting = () => {
     const hours = now.getHours();
 
     if (hours >= 0 && hours < 12) {
-      return " Morning !!!";
+      return " Morning!!!";
     } else if (hours >= 12 && hours < 18) {
-      return " Afternoon !!!";
+      return " Afternoon!!!";
     } else {
-      return " Evening !!!";
+      return " Evening!!!";
     }
   }
 
   return (
-    <div className="absolute top-32">
-      <div className="flex items-start justify-start">
-        <div className="font-PChakra_Petch flex text-7xl text-neutral-400">
+    <div className="absolute top-32 w-[70rem] font-Chakra_Petch">
+      <div className="flex flex-row ">
+        <div className=" flex  text-7xl text-neutral-400">
           Good
           <div className="pl-1 text-[#64FFDA]">{getGreeting()}</div>
         </div>
       </div>
-      <div className="mx-auto flex items-start justify-start text-6xl font-normal text-neutral-600 dark:text-neutral-400">
+      <div className="mx-auto flex  text-6xl font-normal text-neutral-600 dark:text-neutral-400">
         Good at
         <FlipWords words={words} /> <br />
       </div>
