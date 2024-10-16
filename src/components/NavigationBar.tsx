@@ -14,7 +14,7 @@ export const NavigationBar = () => {
       icon: keypress_0,
     },
     {
-      name: "Education",
+      name: "About",
       link: "/",
       icon: keypress_1,
     },
