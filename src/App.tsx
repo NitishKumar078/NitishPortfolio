@@ -3,34 +3,17 @@ import { Projects } from "./components/Projects";
 import { Greeting } from "./components/Greeting";
 import { NavigationBar } from "./components/NavigationBar";
 import { TracingBeamDemo } from "./components/tracing";
-import FlickeringGrid from "./components/ui/flickering-grid";
 import { DotPattern } from "./components/ui/dot-pattern";
-import { cn } from "@/utils/cn";
+
 
 export function App() {
   return (
-    <div className="relative">
+    <div className="grid-flow-col">
       <NavigationBar />
-      {/* <GridPattern
-        width={20}
-        height={20}
-        x={-1}
-        y={-1}
-        className={cn(
-          "[mask-image:radial-gradient(white, transparent)]")}
-      /> */}
-      <FlickeringGrid
-        className="absolute h-full w-full"
-        squareSize={4}
-        gridGap={6}
-        color="#6B7280"
-        maxOpacity={0.5}
-        flickerChance={0.1}
-      />
+      <DotPattern className="fixed h-screen w-screen" />
       <Greeting />
-
       {/* {This is the section of ABOUT} */}
-      <div className="relative top-80 block justify-center">
+      <div className="justify-center">
         <h2 className="border-slate-300 p-3 text-center font-Permanent_Marker text-4xl">
           ABOUT
         </h2>
@@ -38,11 +21,11 @@ export function App() {
       </div>
 
       {/* {This is the section of PROJECT} */}
-      <div className="relative flex flex-col top-80  justify-center">
+      <div className="grid grid-flow-row justify-center">
         <h2 className="border-slate-300 p-3 text-center font-Permanent_Marker text-4xl">
           PROJECTS
         </h2>
-        <div className="absolute ml-5 top-5 flex flex-row space-x-80 p-2">
+        <div className="grid grid-flow-col gap-4">
           <Projects
             heading="Project_1"
             sub_heading="sub_Project_1"
@@ -62,13 +45,13 @@ export function App() {
             href="https://github.com/NitishKumar078"
           />
         </div>
-        {/* {This is the section of SKILL} */}
-        <div className="relative flex flex-col top-56  justify-center">
-          <h2 className="border-slate-300 text-center font-Permanent_Marker text-4xl">
-            SKILL
-          </h2>
-          
-        </div>
+
+      </div>
+      {/* {This is the section of SKILL} */}
+      <div className=" flex flex-col top-56  justify-center">
+        <h2 className="border-slate-300 text-center font-Permanent_Marker text-4xl">
+          SKILL
+        </h2>
       </div>
     </div>
   );
