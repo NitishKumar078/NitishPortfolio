@@ -10,7 +10,7 @@ export function App() {
   return (
     <div className="grid-flow-col">
       <NavigationBar />
-      <DotPattern className="fixed h-screen w-screen" />
+      <DotPattern className="fixed h-screen w-screen -z-10" />
       <Greeting />
       {/* {This is the section of ABOUT} */}
       <div className="justify-center">
