@@ -3,14 +3,14 @@ import { Projects } from "./components/Projects";
 import { Greeting } from "./components/Greeting";
 import { NavigationBar } from "./components/NavigationBar";
 import { TracingBeamDemo } from "./components/tracing";
+import Skill from "./components/Skill.tsx";
 import { DotPattern } from "./components/ui/dot-pattern";
-
 
 export function App() {
   return (
     <div className="grid-flow-col">
       <NavigationBar />
-      <DotPattern className="fixed h-screen w-screen -z-10" />
+      <DotPattern className="fixed -z-10 h-screen w-screen" />
       <Greeting />
       {/* {This is the section of ABOUT} */}
       <div className="justify-center">
@@ -45,13 +45,13 @@ export function App() {
             href="https://github.com/NitishKumar078"
           />
         </div>
-
       </div>
       {/* {This is the section of SKILL} */}
-      <div className=" flex flex-col top-56  justify-center">
+      <div className="top-56 grid grid-flow-clo justify-center gap-4 p-2 m-10">
         <h2 className="border-slate-300 text-center font-Permanent_Marker text-4xl">
           SKILL
         </h2>
+        <Skill />
       </div>
     </div>
   );

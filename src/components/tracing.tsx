@@ -1,23 +1,25 @@
 "use client";
-import TypingAnimation from "./ui/typing-animation";
 import HyperText from "./ui/hyper-text";
 import BlurIn from "./ui/blur-in"
 import { TracingBeam } from "./ui/tracing-beam";
+import TypingAnimation from './ui/typing-animation';
+import { div } from "framer-motion/client";
 
 export function TracingBeamDemo() {
 
   return (
-    <TracingBeam
-      className="relative border bg-white p-2 md:shadow-xl"
+    <div className="relative border bg-white p-2 md:shadow-xl m-5">
+          <TracingBeam
+      
     >
       <div className="relative mx-auto max-w-5xl pt-4 md:max-w-4xl">
         {dummyContent.map((item, index) => (
           <div key={`content-${index}`} className="mb-10">
             <h2 className="mb-4 justify-center rounded-full bg-black px-4 py-1 text-center text-sm text-white">
-              <HyperText
+              <TypingAnimation
                 className="text-2xl font-extralight justify-center align-middle text-center text-white"
                 text={item.badge}
-                duration={5}
+                duration={500}
               />
             </h2>
 
@@ -38,6 +40,8 @@ export function TracingBeamDemo() {
         ))}
       </div>
     </TracingBeam>
+    </div>
+
   );
 }
 
