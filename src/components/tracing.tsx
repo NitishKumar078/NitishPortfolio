@@ -1,9 +1,8 @@
 "use client";
-import HyperText from "./ui/hyper-text";
+import GradualSpacing from "./ui/gradual-spacing";
 import BlurIn from "./ui/blur-in"
 import { TracingBeam } from "./ui/tracing-beam";
 import TypingAnimation from './ui/typing-animation';
-import { div } from "framer-motion/client";
 
 export function TracingBeamDemo() {
 
@@ -16,10 +15,9 @@ export function TracingBeamDemo() {
         {dummyContent.map((item, index) => (
           <div key={`content-${index}`} className="mb-10">
             <h2 className="mb-4 justify-center rounded-full bg-black px-4 py-1 text-center text-sm text-white">
-              <TypingAnimation
+              <GradualSpacing
                 className="text-2xl font-extralight justify-center align-middle text-center text-white"
                 text={item.badge}
-                duration={500}
               />
             </h2>
 
@@ -28,12 +26,12 @@ export function TracingBeamDemo() {
             <div className="prose prose-sm dark:prose-invert text-sm dark:text-white">
               <BlurIn
                 word={item.description}
-                className="font-extralight text-black"
+                className="font-normal text-black"
                 variant={{ 
                   hidden: { filter: "blur(10px)", opacity: 0 }, 
                   visible: { filter: "blur(0px)", opacity: 1 }
                 }}
-                duration={3}
+                duration={2}
               />
             </div>
           </div>
@@ -53,18 +51,14 @@ const dummyContent = [
       " In dolore veniam excepteur eu est et sunt velit. Ipsum sint esse veniam fugiat esse qui sint ad sunt reprehenderit do qui proidentreprehenderit. Laborum exercitation aliqua reprehencillum ut mollit.",
 
     badge: "Education",
-    image:
-      "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&q=80&w=3540&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-  },
+     },
   {
     title: "Work",
     description:
       " In dolore veniam excepteur eu est et sunt velit. Ipsum sint esse veniam fugiat esse qui sint ad sunt reprehenderit do qui proidentreprehenderit. Laborum exercitation aliqua reprehencillum ut mollit.",
 
     badge: "Work",
-    image:
-      "https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&q=80&w=3540&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-  },
+    },
 ];
 
 export default TracingBeamDemo;

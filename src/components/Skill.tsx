@@ -26,7 +26,7 @@ export default function Skill() {
                 ></path>
               </svg>
               <HyperText
-                className="text-2xl font-extralight"
+                className="text-2xl font-Protest_Revolution"
                 text="c#"
                 duration={300}
               />
@@ -40,7 +40,7 @@ export default function Skill() {
                 </g>
               </svg>
               <HyperText
-                className="text-2xl font-extralight"
+                className="text-2xl font-Protest_Revolution"
                 text="C"
                 duration={300}
               />
@@ -63,7 +63,7 @@ export default function Skill() {
               </svg>
 
               <HyperText
-                className="justify-center text-center align-middle text-2xl font-extralight"
+                className="justify-center text-center align-middle text-2xl font-Protest_Revolution"
                 text="React"
                 duration={300}
               />
@@ -90,7 +90,7 @@ export default function Skill() {
               </svg>
 
               <HyperText
-                className="justify-center text-center align-middle text-2xl font-extralight"
+                className="justify-center text-center align-middle text-2xl font-Protest_Revolution"
                 text="C++"
                 duration={300}
               />
@@ -112,7 +112,7 @@ export default function Skill() {
               </svg>
 
               <HyperText
-                className="justify-center text-center align-middle text-2xl font-extralight"
+                className="justify-center text-center align-middle text-2xl font-Protest_Revolution"
                 text="Electron"
                 duration={300}
               />
@@ -143,7 +143,7 @@ export default function Skill() {
               </svg>
 
               <HyperText
-                className="justify-center text-center align-middle text-2xl font-extralight"
+                className="justify-center text-center align-middle text-2xl font-Protest_Revolution"
                 text="Java"
                 duration={300}
               />
@@ -162,7 +162,7 @@ export default function Skill() {
               </svg>
 
               <HyperText
-                className="justify-center text-center align-middle text-2xl font-extralight"
+                className="justify-center text-center align-middle text-2xl font-Protest_Revolution"
                 text="Java script"
                 duration={300}
               />
@@ -226,7 +226,7 @@ export default function Skill() {
                 ></path>
               </svg>
               <HyperText
-                className="justify-center text-center align-middle text-2xl font-extralight"
+                className="justify-center text-center align-middle text-2xl font-Protest_Revolution"
                 text="Python"
                 duration={300}
               />
@@ -258,7 +258,7 @@ export default function Skill() {
               </svg>
 
               <HyperText
-                className="justify-center text-center align-middle text-2xl font-extralight"
+                className="justify-center text-center align-middle text-2xl font-Protest_Revolution"
                 text="HTML"
                 duration={300}
               />
@@ -293,7 +293,7 @@ export default function Skill() {
               </svg>
 
               <HyperText
-                className="justify-center text-center align-middle text-2xl font-extralight"
+                className="justify-center text-center align-middle text-2xl font-Protest_Revolution"
                 text="Css"
                 duration={300}
               />
@@ -312,7 +312,7 @@ export default function Skill() {
               </svg>
 
               <HyperText
-                className="justify-center text-center align-middle text-2xl font-extralight"
+                className="justify-center text-center align-middle text-2xl font-Protest_Revolution"
                 text="Tailwind"
                 duration={300}
               />
@@ -327,7 +327,7 @@ export default function Skill() {
               </svg>
 
               <HyperText
-                className="justify-center text-center align-middle text-2xl font-extralight"
+                className="justify-center text-center align-middle text-2xl font-Protest_Revolution"
                 text="Jquer"
                 duration={300}
               />
@@ -347,7 +347,7 @@ export default function Skill() {
               </svg>
 
               <HyperText
-                className="justify-center text-center align-middle text-2xl font-extralight"
+                className="justify-center text-center align-middle text-2xl font-Protest_Revolution"
                 text="Mysql"
                 duration={300}
               />
@@ -389,7 +389,7 @@ export default function Skill() {
               </svg>
 
               <HyperText
-                className="justify-center text-center align-middle text-2xl font-extralight"
+                className="justify-center text-center align-middle text-2xl font-Protest_Revolution"
                 text="Sqlite"
                 duration={300}
               />
@@ -410,7 +410,7 @@ export default function Skill() {
               </svg>
 
               <HyperText
-                className="justify-center text-center align-middle text-2xl font-extralight"
+                className="justify-center text-center align-middle text-2xl font-Protest_Revolution"
                 text="Postgresql"
                 duration={300}
               />

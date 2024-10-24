@@ -27,6 +27,10 @@ export default {
       fontFamily: {
         Chakra_Petch: ["Chakra Petch"],
         Permanent_Marker: ["Permanent Marker"],
+        Protest_Revolution:["Protest Revolution"],
+        Rubik_Marker_Hatch: ["Rubik Marker Hatch"],
+        Righteous: ["Righteous"],
+
       },
       borderRadius: {
         lg: "var(--radius)",

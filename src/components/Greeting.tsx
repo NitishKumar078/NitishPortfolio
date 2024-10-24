@@ -16,16 +16,18 @@ export const Greeting = () => {
   }
 
   return (
-    <div className="top-5 inline-block font-Chakra_Petch">
+    <div className="font-Righteous top-5 inline-block">
       <div className="flex flex-row">
-        <div className="flex bg-white text-7xl text-neutral-400 md:shadow-xl">
+        <div className="flex bg-white p-2 pr-14 text-7xl font-bold text-neutral-400 md:shadow-xl">
           Good
-          <div className="pl-1 text-[#64FFDA]">{getGreeting()}</div>
+          <div className="font-Rubik_Marker_Hatch pl-1 text-[#ffcc33]">
+            {getGreeting()}
+          </div>
         </div>
       </div>
-      <div className="m-2 mx-auto flex p-2 text-6xl font-normal text-neutral-600 dark:text-white">
+      <div className="m-4 mx-auto flex p-5 text-6xl font-normal text-neutral-600 dark:text-white space-x-5">
         Good at
-        <FlipWords words={words} /> <br />
+        <FlipWords words={words} /> 
       </div>
     </div>
   );
