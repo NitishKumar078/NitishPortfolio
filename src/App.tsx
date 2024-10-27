@@ -21,13 +21,13 @@ export function App() {
       </div>
 
       <div className=" grid-flow-row justify-center items-center">
-      <Greeting />
+      <Greeting/>
       <img src={mansitting} className=" w-1/3 inline-block"/>
       </div>
       
 
       <div>
-      time is something ..... (click_me ) dont click me 
+      <span className="font-Protest_Revolution text-4xl">Think before you click me </span>
       </div>
 
 
