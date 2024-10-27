@@ -5,26 +5,53 @@ import { NavigationBar } from "./components/NavigationBar";
 import { TracingBeamDemo } from "./components/tracing";
 import Skill from "./components/Skill.tsx";
 import { DotPattern } from "./components/ui/dot-pattern";
+import HyperText from "./components/ui/hyper-text";
+import mansitting from "@/assets/Problem addicent oops.png";
 
 export function App() {
   return (
     <div className="grid-flow-col">
-      <NavigationBar />
+      {/* background design */}
       <DotPattern className="fixed -z-10 h-screen w-screen" />
+
+      {/* {This is the section of NAVIGATION} */}
+      <div className="glass_effect">
+        <NavigationBar />
+        
+      </div>
+
+      <div className=" grid-flow-row justify-center items-center">
       <Greeting />
+      <img src={mansitting} className=" w-1/3 inline-block"/>
+      </div>
+      
+
+      <div>
+      time is something ..... (click_me ) dont click me 
+      </div>
+
+
       {/* {This is the section of ABOUT} */}
-      <div className="justify-center">
-        <h2 className="border-slate-300 p-3 text-center font-Permanent_Marker text-4xl">
-          ABOUT
-        </h2>
+      <div className="items-center justify-center">
+        <HyperText
+          text="ABOUT ME"
+          className=" border-slate-300 text-center font-Permanent_Marker text-4xl"
+          duration={50}
+          animateOnLoad={false}
+        />
+
         <TracingBeamDemo />
       </div>
 
       {/* {This is the section of PROJECT} */}
       <div className="grid grid-flow-row justify-center">
-        <h2 className="border-slate-300 p-3 text-center font-Permanent_Marker text-4xl">
-          PROJECTS
-        </h2>
+        <HyperText
+          text="PROJECT's"
+          className=" border-slate-300 text-center font-Permanent_Marker text-4xl"
+          duration={50}
+          animateOnLoad={false}
+        />
+
         <div className="grid grid-flow-col gap-4">
           <Projects
             heading="Project_1"
@@ -47,10 +74,13 @@ export function App() {
         </div>
       </div>
       {/* {This is the section of SKILL} */}
-      <div className="top-56 grid grid-flow-clo justify-center gap-4 p-2 m-10">
-        <h2 className="border-slate-300 text-center font-Permanent_Marker text-4xl">
-          SKILL
-        </h2>
+      <div className="grid-flow-clo top-56 m-10 grid justify-center gap-4 p-2">
+         <HyperText
+          text="SKILL's"
+          className=" border-slate-300 text-center font-Permanent_Marker text-4xl"
+          duration={50}
+          animateOnLoad={false}
+        />
         <Skill />
       </div>
     </div>

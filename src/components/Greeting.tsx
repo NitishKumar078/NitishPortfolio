@@ -16,7 +16,7 @@ export const Greeting = () => {
   }
 
   return (
-    <div className="font-Righteous top-5 inline-block">
+    <div className="font-Righteous pt-24 inline-block">
       <div className="flex flex-row">
         <div className="flex bg-white p-2 pr-14 text-7xl font-bold text-neutral-400 md:shadow-xl">
           Good

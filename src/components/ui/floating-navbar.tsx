@@ -41,7 +41,7 @@ export const FloatingNav = ({
   });
 
   return (
-    <AnimatePresence mode="wait">
+    <AnimatePresence mode="sync">
       <motion.div
         initial={{
           opacity: 1,
@@ -55,7 +55,7 @@ export const FloatingNav = ({
           duration: 0.2,
         }}
         className={cn(
-          "fixed right-20 top-7 z-[5000] mx-auto flex max-w-fit space-x-4 rounded-full dark:border dark:border-[#38ffd1] dark:bg-[#ace1df0a] py-2 pl-5 pr-5  dark:border-white/[0.2]",
+          "fixed right-20 top-7 z-[5000] mx-auto flex max-w-fit space-x-4 rounded-full",
           className,
         )}
       >
@@ -63,7 +63,7 @@ export const FloatingNav = ({
           <div
             key={`link=${idx}`}
             className={cn(
-              "relative flex items-center space-x-1 font-medium text-neutral-600 hover:text-neutral-500 dark:text-neutral-100 dark:hover:text-neutral-700 dark:hover:underline-offset-auto  dark:hover:",
+              "relative flex items-center space-x-1 font-medium text-neutral-600 hover:text-neutral-500  ",
             )}
           >
             {navItem.icon && (
