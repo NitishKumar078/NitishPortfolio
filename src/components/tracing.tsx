@@ -4,9 +4,8 @@ import BlurIn from "./ui/blur-in";
 import { TracingBeam } from "./ui/tracing-beam";
 import { BoxReveal } from "./ui/box-reveal";
 import TypingAnimation from "./ui/typing-animation";
-import { image } from "framer-motion/client";
 import Reading from "@/assets/Reading.png";
-import Work from "@/assets/Working.png";
+import Work from "@/assets/working.png";
 
 export function TracingBeamDemo() {
   return (
@@ -35,11 +34,11 @@ export function TracingBeamDemo() {
               </div>
               {/* handle the image here  */}
               {item.image && item.section && item.className && (
-                <div className={`${item.className} flex pt-10 justify-between items-center `}>
+                <div className={`${item.className} flex pt-2 justify-between items-center `}>
                   <img
                     src={item.image}
                     alt="SORRY NOT ABLE TO LOAD THE IMAGE HERE"
-                    className="size-2/6 object-cover"
+                    className="h-96 w-2/3 object-cover"
                   />
 
                   <div>
