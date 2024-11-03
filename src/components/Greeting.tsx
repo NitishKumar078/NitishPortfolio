@@ -1,7 +1,7 @@
 import { FlipWords } from "./ui/flip-words";
 
 export const Greeting = () => {
-  const words = ["building", "coffee", "code", "tech"];
+  const words = ["Think","Code"];
   function getGreeting() {
     const now = new Date();
     const hours = now.getHours();
@@ -18,15 +18,15 @@ export const Greeting = () => {
   return (
     <div className="font-Righteous pt-24 inline-block">
       <div className="flex flex-row">
-        <div className="flex bg-white p-2 pr-14 text-7xl font-bold text-neutral-400 md:shadow-xl">
+        <div className="flex bg-white p-2 pr-14 sm:text-7xl text-5xl font-bold text-neutral-400 md:shadow-xl">
           Good
-          <div className="font-Rubik_Marker_Hatch pl-1 text-[#ffcc33]">
+          <div className="font-Rubik_Marker_Hatch pl-1 text-[#ffcc33] ">
             {getGreeting()}
           </div>
         </div>
       </div>
-      <div className="m-4 mx-auto flex p-5 text-6xl font-normal text-neutral-600 dark:text-white space-x-5">
-        Good at
+      <div className="mt-6 p-2 text-4xl font-normal text-neutral-600 space-x-4 sm:flex hidden">
+        Alway make sure you
         <FlipWords words={words} /> 
       </div>
     </div>

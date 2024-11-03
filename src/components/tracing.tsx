@@ -38,7 +38,7 @@ export function TracingBeamDemo() {
                   <img
                     src={item.image}
                     alt="SORRY NOT ABLE TO LOAD THE IMAGE HERE"
-                    className="h-96 w-2/3 object-cover border-4 border-transparent rounded-lg"
+                    className="h-96 w-2/3 object-cover border-4 border-transparent rounded-lg "
                   />
 
                   <div>
@@ -125,7 +125,7 @@ const dummyContent = [
 
     badge: "Education",
     image: Reading,
-    className: "flex-row",
+    className: "sm:flex-row flex-col-reverse",
     section: [
       {
         place: "KLE Socity degree college",
@@ -144,7 +144,7 @@ const dummyContent = [
 
     badge: "Work",
     image: Work,
-    className: "flex-row-reverse pt-5 ",
+    className: "sm:flex-row-reverse pt-5 flex-col-reverse ",
     section: [
       {
         place: "Inventys Pvt Ltd",

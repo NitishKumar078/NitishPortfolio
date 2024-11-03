@@ -1,41 +1,53 @@
 "use client";
+import {  useRef } from "react";
 import { Projects } from "./components/Projects";
 import { Greeting } from "./components/Greeting";
-import { NavigationBar } from "./components/NavigationBar";
+import { Navigation } from "./components/Navigation";
 import { TracingBeamDemo } from "./components/tracing";
-import Skill from "./components/Skill.tsx";
 import { DotPattern } from "./components/ui/dot-pattern";
 import HyperText from "./components/ui/hyper-text";
+import Button from "./components/ui/Button";
+import {AnimatedBlog} from "./components/AnimatedBlog";
 import mansitting from "@/assets/Problem addicent oops.png";
 
 export function App() {
+   // Step 1: Set up refs for each section
+   const aboutRef = useRef(null);
+   const projectsRef = useRef(null);
+   const skillsRef = useRef(null);
+ 
+   // Step 2: Create the scroll function
+   const scrollToSection = (ref:React.RefObject<HTMLDivElement>) => {
+     ref.current?.scrollIntoView({ behavior: "smooth" });
+   };
+
   return (
     <div className="grid-flow-col">
       {/* background design */}
       <DotPattern className="fixed -z-10 h-screen w-screen" />
 
-      {/* {This is the section of NAVIGATION} */}
-      <div className="glass_effect">
-        <NavigationBar />
-        
-      </div>
+      {/* <div className=""> */}
+      <Navigation aboutRef={aboutRef} projectsRef={projectsRef} skillsRef={skillsRef} />
+      {/* </div> */}
 
-      <div className=" grid-flow-row justify-center items-center">
+
+      <div className=" flex flex-row justify-between items-center p-2">
       <Greeting/>
-      <img src={mansitting} className=" w-1/3 inline-block"/>
+      <img src={mansitting} className="w-1/3 sm:inline-block hidden"/>
       </div>
       
 
-      <div>
-      <span className="font-Protest_Revolution text-4xl">Think before you click me </span>
+      <div className="flex flex-col justify-center items-center" >
+      <span className="font-Rubik_Marker_Hatch text-4xl p-4"> Feel free to skip and connect with me. &#128516;</span>
+      <Button/>
       </div>
 
 
       {/* {This is the section of ABOUT} */}
-      <div className="items-center justify-center">
+      <div ref={aboutRef} className="items-center justify-center m-5">
         <HyperText
           text="ABOUT ME"
-          className=" border-slate-300 text-center font-Permanent_Marker text-4xl"
+          className=" border-slate-300 text-center font-Permanent_Marker text-4xl "
           duration={50}
           animateOnLoad={false}
         />
@@ -44,7 +56,7 @@ export function App() {
       </div>
 
       {/* {This is the section of PROJECT} */}
-      <div className="grid grid-flow-row justify-center">
+      <div ref={projectsRef} className="grid grid-flow-row justify-center">
         <HyperText
           text="PROJECT's"
           className=" border-slate-300 text-center font-Permanent_Marker text-4xl"
@@ -52,7 +64,7 @@ export function App() {
           animateOnLoad={false}
         />
 
-        <div className="grid grid-flow-col gap-4">
+        <div className="grid  sm:grid-flow-col grid-flow-row  gap-4">
           <Projects
             heading="Project_1"
             sub_heading="sub_Project_1"
@@ -74,14 +86,14 @@ export function App() {
         </div>
       </div>
       {/* {This is the section of SKILL} */}
-      <div className="grid-flow-clo top-56 m-10 grid justify-center gap-4 p-2">
+      <div ref={skillsRef} className="grid-flow-clo  m-10 grid justify-center gap-4 ">
          <HyperText
           text="SKILL's"
           className=" border-slate-300 text-center font-Permanent_Marker text-4xl"
           duration={50}
           animateOnLoad={false}
         />
-        <Skill />
+        <AnimatedBlog/>
       </div>
     </div>
   );
