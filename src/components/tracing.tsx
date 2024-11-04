@@ -3,7 +3,6 @@ import GradualSpacing from "./ui/gradual-spacing";
 import BlurIn from "./ui/blur-in";
 import { TracingBeam } from "./ui/tracing-beam";
 import { BoxReveal } from "./ui/box-reveal";
-import TypingAnimation from "./ui/typing-animation";
 import Reading from "@/assets/Reading.png";
 import Work from "@/assets/working.png";
 
@@ -34,11 +33,13 @@ export function TracingBeamDemo() {
               </div>
               {/* handle the image here  */}
               {item.image && item.section && item.className && (
-                <div className={`${item.className} flex pt-2 justify-between items-center `}>
+                <div
+                  className={`${item.className} flex items-center justify-between pt-2`}
+                >
                   <img
                     src={item.image}
                     alt="SORRY NOT ABLE TO LOAD THE IMAGE HERE"
-                    className="h-96 w-2/3 object-cover border-4 border-transparent rounded-lg "
+                    className="h-96 w-2/3 rounded-lg border-4 border-transparent object-cover"
                   />
 
                   <div>

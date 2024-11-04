@@ -4,13 +4,13 @@ import TypingAnimation from "./typing-animation";
 
 const Button: React.FC = () => {
   return (
-    <button className="relative w-full max-w-lg bg-[#9B7EBD] text-black font-bold text-base md:text-lg md:py-3 md:px-12 py-3 px-7 flex justify-center items-center cursor-pointer rotate-[-2deg] transform select-none focus:outline-none border-0">
+    <button className="relative flex w-full max-w-lg rotate-[-2deg] transform cursor-pointer select-none items-center justify-center border-0 bg-[#9B7EBD] px-7 py-3 text-base font-bold text-black focus:outline-none md:px-12 md:py-3 md:text-lg">
       <TypingAnimation
-        text="LET'S CONNECT" 
+        text="LET'S CONNECT"
         duration={50}
         className="text-white"
-        />
-      <span className="absolute border border-black bottom-1 left-1 w-[calc(100%-2px)] h-[calc(100%-2px)] transition-all duration-200 ease-in-out"></span>
+      />
+      <span className="absolute bottom-1 left-1 h-[calc(100%-2px)] w-[calc(100%-2px)] border border-black transition-all duration-200 ease-in-out"></span>
     </button>
   );
 };

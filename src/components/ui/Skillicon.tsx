@@ -2,13 +2,13 @@
 export default function Skill() {
   return (
     <div>
-      <div className="flex mt-14 p-2 sm:m-0 w-[85vw]  flex-col  justify-between gap-6 ">
-        <h3 className="text-center font-Righteous text-xl m-2">
+      <div className="mt-14 flex w-[85vw] flex-col justify-between gap-6 p-2 sm:m-0">
+        <h3 className="m-2 text-center font-Righteous text-xl">
           <u>I'm a Programming Languages</u>{" "}
         </h3>
         <div
           id="row1"
-          className="m-2 flex flex-row items-center justify-between  flex-wrap"
+          className="m-2 flex flex-row flex-wrap items-center justify-between"
         >
           <div className="flex flex-row items-center gap-2">
             <svg id="c" viewBox="0 0 128 128" className="inline size-12">
@@ -159,7 +159,7 @@ export default function Skill() {
         </h3>
         <div
           id="row2"
-          className="m-2 flex flex-row items-center justify-between flex-wrap"
+          className="m-2 flex flex-row flex-wrap items-center justify-between"
         >
           <div className="flex flex-row items-center gap-2">
             <svg id="html" viewBox="0 0 128 128" className="inline size-12">
@@ -258,7 +258,7 @@ export default function Skill() {
         </h3>
         <div
           id="row3"
-          className="m-2 flex flex-row items-center justify-center gap-40 flex-wrap"
+          className="m-2 flex flex-row flex-wrap items-center justify-center gap-40"
         >
           <div className="flex flex-col items-center justify-center gap-2">
             <svg id="mysql" viewBox="0 0 128 128" className="inline size-12">
@@ -311,7 +311,7 @@ export default function Skill() {
         </h3>
         <div
           id="row4"
-          className="m-2 sm:m-0  flex flex-row items-center justify-center gap-40 flex-wrap"
+          className="m-2 flex flex-row flex-wrap items-center justify-center gap-40 sm:m-0"
         >
           <div className="flex flex-row items-center gap-2">
             <svg id="Electron" viewBox="0 0 128 128" className="inline size-12">

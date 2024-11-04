@@ -5,7 +5,6 @@ import { AnimatePresence, motion, Variants } from "framer-motion";
 
 import { cn } from "@/utils/cn";
 
-
 interface HyperTextProps {
   text: string;
   duration?: number;
@@ -84,7 +83,7 @@ export default function HyperText({
 
   return (
     <div
-      className="overflow-hidden py-2 flex  scale-100 justify-center"
+      className="flex scale-100 justify-center overflow-hidden py-2"
       onMouseEnter={triggerAnimation}
     >
       <AnimatePresence mode="sync">

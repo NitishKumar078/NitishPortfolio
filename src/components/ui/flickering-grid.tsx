@@ -170,7 +170,7 @@ const FlickeringGrid: React.FC<FlickeringGridProps> = ({
   return (
     <canvas
       ref={canvasRef}
-      className={`size-full pointer-events-none ${className}`}
+      className={`pointer-events-none size-full ${className}`}
       style={{
         width: width || "100%",
         height: height || "100%",

@@ -22,7 +22,11 @@ export const AnimatedBlog: FC = () => {
           // Show text after rectangle expansion completes
           setShowText(true);
           // Smoothly scroll to make the expanded rectangle fully visible
-          ref.current?.scrollIntoView({ behavior: "smooth", block: "center" , inline: "center" });
+          ref.current?.scrollIntoView({
+            behavior: "smooth",
+            block: "center",
+            inline: "center",
+          });
         });
       }, 2000);
     }
@@ -42,7 +46,7 @@ export const AnimatedBlog: FC = () => {
   };
 
   return (
-    <motion.div ref={ref} >
+    <motion.div ref={ref}>
       <motion.div
         style={ballStyle}
         animate={controls}
@@ -72,10 +76,9 @@ export const AnimatedBlog: FC = () => {
       >
         {/* Render text only when expandToRectangle animation is active */}
         {showText && (
-          <div >
-            <Skill/>
+          <div>
+            <Skill />
           </div>
-          
         )}
       </motion.div>
     </motion.div>

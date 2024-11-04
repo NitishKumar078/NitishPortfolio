@@ -9,7 +9,7 @@ export default {
         Protest_Revolution: ["Protest Revolution", "sans-serif"], // Added fallback font
         Rubik_Marker_Hatch: ["Rubik Marker Hatch", "sans-serif"], // Added fallback font
         Righteous: ["Righteous", "cursive"], // Added fallback font
-      }
+      },
     },
   },
   plugins: [],

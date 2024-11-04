@@ -1,31 +1,33 @@
 "use client";
-import {useEffect,useState} from "react"
+import { useEffect, useState } from "react";
 import { PinContainer } from "./ui/3d-pin";
 
 interface ProjectsProps {
   heading: string;
   sub_heading: string;
-  title:string;
-  href:string;
+  title: string;
+  href: string;
   className?: string;
-
 }
-export const Projects = ({heading, sub_heading, title, href,className}:ProjectsProps) => {
-  const[classname,setclassname] = useState("")
+export const Projects = ({
+  heading,
+  sub_heading,
+  title,
+  href,
+  className,
+}: ProjectsProps) => {
+  const [classname, setclassname] = useState("");
 
- useEffect(() => {
-  setclassname(className+"absolute flex h-52  ml-20")
- }, []);
+  useEffect(() => {
+    setclassname(className + "absolute flex h-52  ml-20");
+  }, []);
   return (
     <div className={classname}>
       <div className="card flex w-fit">
-        <PinContainer
-          title={title}
-          href={href}
-        >
+        <PinContainer title={title} href={href}>
           <div className="flex h-[8rem] w-[7rem] basis-full flex-col tracking-tight text-slate-100/50 sm:basis-1/2">
             <h3 className="-m-2 max-w-xs !pb-1 font-semibold text-slate-100">
-             {heading}
+              {heading}
             </h3>
             <div className="text-si font-thin">
               <span className="text-slate-300">{sub_heading}</span>
