@@ -1,6 +1,6 @@
 "use client";
 import { useEffect, useState } from "react";
-import { PinContainer } from "./ui/3d-pin";
+import { PinContainer } from "@/components/ui/3d-pin";
 
 interface ProjectsProps {
   heading: string;

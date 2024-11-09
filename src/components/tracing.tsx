@@ -45,71 +45,63 @@ export function TracingBeamDemo() {
                   <div>
                     {item.section.map((sectionItem, idx) => (
                       <div key={idx}>
-                        <h3 className="inline-block text-lg font-semibold">
-                          {sectionItem.title}
-                        </h3>
-                        <span className="ml-2 text-sm text-gray-500">
-                          (recently)
-                        </span>
-                        <p className="text-sm text-gray-600">
-                          {sectionItem.place}
-                        </p>
-                        <p className="text-xs text-gray-500">
-                          {sectionItem.date}
-                        </p>
-                        <p className="mt-2 text-sm">
-                          {sectionItem.description}
-                        </p>
+                        <BoxReveal boxColor={"#5046e6"} duration={0.5}>
+                          <p className="text-[1.5rem] font-semibold">
+                            {sectionItem.title}{" "}
+                            <span className="text-[1rem] text-[#5046e6]">
+                              {" "}
+                              (recently)
+                            </span>
+                          </p>
+                        </BoxReveal>
+
+                        <BoxReveal boxColor={"#5046e6"} duration={0.5}>
+                          <div>
+                            <h2 className="mt-[.5rem] text-[1rem]">
+                              {sectionItem.place}{" "}
+                              <span className="m-2 inline-block text-[#5046e6]">
+                                {sectionItem.location}{" "}
+                              </span>
+                            </h2>
+                            <span className="inline-block text-[#5046e6]">
+                              {sectionItem.date}
+                            </span>
+                          </div>
+                        </BoxReveal>
+
+                        <BoxReveal boxColor={"#5046e6"} duration={0.5}>
+                          <div className="mt-6">
+                            <p>
+                              -&gt; {sectionItem.description}
+                              <span className="font-semibold text-[#5046e6]">
+                                {" "}
+                                React
+                              </span>
+                              ,
+                              <span className="font-semibold text-[#5046e6]">
+                                {" "}
+                                Typescript
+                              </span>
+                              ,
+                              <span className="font-semibold text-[#5046e6]">
+                                {" "}
+                                Tailwind CSS
+                              </span>
+                              , and
+                              <span className="font-semibold text-[#5046e6]">
+                                {" "}
+                                Framer Motion
+                              </span>
+                              . <br />
+                              -&gt; 100% open-source, and customizable. <br />
+                            </p>
+                          </div>
+                        </BoxReveal>
                       </div>
                     ))}
                   </div>
                 </div>
               )}
-
-              {/* <>
-                <BoxReveal boxColor={"#5046e6"} duration={0.5}>
-                  <p className="text-[3.5rem] font-semibold">
-                    Magic UI<span className="text-[#5046e6]">.</span>
-                  </p>
-                </BoxReveal>
-
-                <BoxReveal boxColor={"#5046e6"} duration={0.5}>
-                  <h2 className="mt-[.5rem] text-[1rem]">
-                    UI library for{" "}
-                    <span className="text-[#5046e6]">Design Engineers</span>
-                  </h2>
-                </BoxReveal>
-
-                <BoxReveal boxColor={"#5046e6"} duration={0.5}>
-                  <div className="mt-6">
-                    <p>
-                      -&gt; 20+ free and open-source animated components built
-                      with
-                      <span className="font-semibold text-[#5046e6]">
-                        {" "}
-                        React
-                      </span>
-                      ,
-                      <span className="font-semibold text-[#5046e6]">
-                        {" "}
-                        Typescript
-                      </span>
-                      ,
-                      <span className="font-semibold text-[#5046e6]">
-                        {" "}
-                        Tailwind CSS
-                      </span>
-                      , and
-                      <span className="font-semibold text-[#5046e6]">
-                        {" "}
-                        Framer Motion
-                      </span>
-                      . <br />
-                      -&gt; 100% open-source, and customizable. <br />
-                    </p>
-                  </div>
-                </BoxReveal>
-              </> */}
             </div>
           ))}
         </div>
@@ -132,6 +124,7 @@ const dummyContent = [
         place: "KLE Socity degree college",
         score: "8.1 CGPA",
         title: "Bachelor of Computer Application",
+        location: "karnataka, India",
         date: "2019 - 2023",
         description:
           "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi, doloribus.",
@@ -150,6 +143,7 @@ const dummyContent = [
       {
         place: "Inventys Pvt Ltd",
         title: "Junior Software Developer",
+        location: "karnataka, India",
         date: "2023 - currently working",
         description:
           "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi, doloribus.",

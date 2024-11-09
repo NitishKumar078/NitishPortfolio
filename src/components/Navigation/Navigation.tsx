@@ -1,7 +1,7 @@
 import React from "react";
-import about from "../assets/about-me.png";
-import project from "../assets/project.png";
-import skill from "../assets/skill.png";
+import about from "@/assets/about-me.png";
+import project from "@/assets/project.png";
+import skill from "@/assets/skill.png";
 
 import { Dock, DockIcon } from "@/components/ui/dock";
 
