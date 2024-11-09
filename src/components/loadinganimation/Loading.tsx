@@ -43,7 +43,7 @@ const Loading = () => {
       />
 
       {/* Glitch Effect Layers */}
-      <div className="relative text-8xl font-bold tracking-wide text-black">
+      <div className="relative text-6xl font-bold tracking-wide text-black sm:text-8xl">
         <span className="relative z-10">{time}</span>
         <span className="animate-glitch1 absolute inset-0 translate-x-1 translate-y-1 transform text-red-600 opacity-75">
           {time}
@@ -52,7 +52,7 @@ const Loading = () => {
           {time}
         </span>
       </div>
-      <div className="fixed left-[48vw] top-[85vh]">
+      <div className="fixed top-[85vh] sm:left-[48vw]">
         <motion.div
           className="aspect-square w-12 rounded-full"
           style={{
