@@ -2,7 +2,6 @@ import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 
 const Loading = () => {
-  const [isClockOn, setClockOn] = useState(false);
   const [time, setTime] = useState("");
 
   useEffect(() => {
@@ -14,7 +13,6 @@ const Loading = () => {
       setTime(`${hours} : ${minutes} : ${seconds}`);
     };
 
-    setTimeout(() => setClockOn(true), 2000);
     updateClock();
     const interval = setInterval(updateClock, 1000);
 

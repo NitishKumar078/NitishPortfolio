@@ -112,6 +112,25 @@ export function TracingBeamDemo() {
 
 const dummyContent = [
   {
+    title: "Work",
+    description:
+      " In dolore veniam excepteur eu est et sunt velit. Ipsum sint esse veniam fugiat esse qui sint ad sunt reprehenderit do qui proidentreprehenderit. Laborum exercitation aliqua reprehencillum ut mollit.",
+
+    badge: "Work",
+    image: Work,
+    className: "sm:flex-row-reverse pt-5 flex-col-reverse ",
+    section: [
+      {
+        place: "Inventys Pvt Ltd",
+        title: "Junior Software Developer",
+        location: "karnataka, India",
+        date: "2023 - currently working",
+        description:
+          "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi, doloribus.",
+      },
+    ],
+  },
+  {
     title: "Education",
     description:
       " In dolore veniam excepteur eu est et sunt velit. Ipsum sint esse veniam fugiat esse qui sint ad sunt reprehenderit do qui proidentreprehenderit. Laborum exercitation aliqua reprehencillum ut mollit.",
@@ -126,25 +145,6 @@ const dummyContent = [
         title: "Bachelor of Computer Application",
         location: "karnataka, India",
         date: "2019 - 2023",
-        description:
-          "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi, doloribus.",
-      },
-    ],
-  },
-  {
-    title: "Work",
-    description:
-      " In dolore veniam excepteur eu est et sunt velit. Ipsum sint esse veniam fugiat esse qui sint ad sunt reprehenderit do qui proidentreprehenderit. Laborum exercitation aliqua reprehencillum ut mollit.",
-
-    badge: "Work",
-    image: Work,
-    className: "sm:flex-row-reverse pt-5 flex-col-reverse ",
-    section: [
-      {
-        place: "Inventys Pvt Ltd",
-        title: "Junior Software Developer",
-        location: "karnataka, India",
-        date: "2023 - currently working",
         description:
           "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi, doloribus.",
       },

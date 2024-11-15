@@ -6,7 +6,7 @@ import { TracingBeamDemo } from "./components/tracing";
 import { DotPattern } from "./components/ui/dot-pattern";
 import HyperText from "./components/ui/hyper-text";
 import Button from "./components/ui/Button";
-import { AnimatedBlog } from "./components/AnimatedBlog";
+import { Skills } from "./components/Skills";
 import mansitting from "@/assets/Problem addicent oops.png";
 import { motion, AnimatePresence } from "framer-motion";
 import Loading from "./components/loadinganimation/Loading";
@@ -121,7 +121,7 @@ export function App() {
                 duration={50}
                 animateOnLoad={false}
               />
-              <AnimatedBlog />
+              <Skills />
             </div>
           </div>
         )}
