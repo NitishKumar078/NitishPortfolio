@@ -20,10 +20,10 @@ const Loading = () => {
   }, []);
 
   return (
-    <div className="relative flex h-screen w-full items-center justify-center bg-zinc-900">
+    <div className="relative flex h-screen w-full items-center justify-center bg-white dark:bg-zinc-900">
       {/* Dark Theme Triangle Background */}
       <motion.div
-        className="absolute h-0 w-0 border-b-[400px] border-l-[200px] border-r-[200px] border-b-purple-600/20 border-l-transparent border-r-transparent"
+        className="absolute h-0 w-0 border-b-[400px] border-l-[200px] border-r-[200px] border-b-black border-l-transparent border-r-transparent dark:border-b-purple-600/20"
         animate={{ rotateX: 200, rotateY: 200 }}
         transition={{
           duration: 1,
@@ -31,7 +31,7 @@ const Loading = () => {
         }}
       />
       <motion.div
-        className="absolute h-0 w-0 border-b-[390px] border-l-[190px] border-r-[190px] border-b-zinc-900 border-l-transparent border-r-transparent"
+        className="absolute h-0 w-0 border-b-[390px] border-l-[190px] border-r-[190px] border-b-white border-l-transparent border-r-transparent dark:border-b-zinc-900"
         animate={{ rotateX: 200, rotateY: 200 }}
         transition={{
           duration: 1,
@@ -40,12 +40,12 @@ const Loading = () => {
       />
 
       {/* Glitch Effect Clock */}
-      <div className="relative text-6xl font-bold tracking-wide text-zinc-100 sm:text-8xl">
+      <div className="relative text-6xl font-bold tracking-wide text-black dark:text-zinc-100 sm:text-8xl">
         <span className="relative z-10">{time}</span>
-        <span className="animate-glitch1 absolute inset-0 translate-x-1 translate-y-1 transform text-purple-500/75">
+        <span className="absolute inset-0 translate-x-1 translate-y-1 transform animate-glitch1 text-red-600 dark:text-purple-500/75">
           {time}
         </span>
-        <span className="animate-glitch2 absolute inset-0 -translate-x-1 -translate-y-1 transform text-cyan-400/75">
+        <span className="absolute inset-0 -translate-x-1 -translate-y-1 transform animate-glitch2 text-blue-600 dark:text-cyan-400/75">
           {time}
         </span>
       </div>
