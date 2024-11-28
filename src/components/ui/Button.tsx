@@ -1,16 +1,15 @@
-// Button53.tsx
 import React from "react";
 import TypingAnimation from "./typing-animation";
 
 const Button: React.FC = () => {
   return (
-    <button className="relative flex w-full max-w-lg rotate-[-2deg] transform cursor-pointer select-none items-center justify-center border-0 bg-[#9B7EBD] px-7 py-3 text-base font-bold text-black focus:outline-none md:px-12 md:py-3 md:text-lg">
+    <button className="group relative w-full max-w-xs transform cursor-pointer select-none rounded bg-[#9B7EBD] px-4 py-2 text-base font-bold text-white transition-transform hover:scale-105 focus:outline-none sm:max-w-sm md:px-8 md:py-3 md:text-lg">
       <TypingAnimation
         text="LET'S CONNECT"
         duration={50}
-        className="text-white"
+        className="relative z-10"
       />
-      <span className="absolute bottom-1 left-1 h-[calc(100%-2px)] w-[calc(100%-2px)] border border-black transition-all duration-200 ease-in-out"></span>
+      <span className="absolute inset-0 translate-x-1 translate-y-1 rounded border border-black transition-transform group-hover:translate-x-0 group-hover:translate-y-0"></span>
     </button>
   );
 };

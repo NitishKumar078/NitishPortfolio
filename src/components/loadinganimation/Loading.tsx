@@ -20,52 +20,53 @@ const Loading = () => {
   }, []);
 
   return (
-    <div className="relative flex h-screen w-full items-center justify-center bg-white">
-      {/* Static White Triangle Background */}
-
+    <div className="relative flex h-screen w-full items-center justify-center bg-zinc-900">
+      {/* Dark Theme Triangle Background */}
       <motion.div
-        className="absolute h-0 w-0 border-b-[400px] border-l-[200px] border-r-[200px] border-transparent border-b-black"
-        animate={{ rotateX: 200, rotateY: 200 }} // Adjust these values for the desired tilt
+        className="absolute h-0 w-0 border-b-[400px] border-l-[200px] border-r-[200px] border-b-purple-600/20 border-l-transparent border-r-transparent"
+        animate={{ rotateX: 200, rotateY: 200 }}
         transition={{
-          duration: 1, // Control the speed of the tilt
-          ease: "easeInOut", // Smooth easing for a gradual effect
+          duration: 1,
+          ease: "easeInOut",
         }}
       />
       <motion.div
-        className="absolute h-0 w-0 border-b-[390px] border-l-[190px] border-r-[190px] border-transparent border-b-white"
-        animate={{ rotateX: 200, rotateY: 200 }} // Adjust these values for the desired tilt
+        className="absolute h-0 w-0 border-b-[390px] border-l-[190px] border-r-[190px] border-b-zinc-900 border-l-transparent border-r-transparent"
+        animate={{ rotateX: 200, rotateY: 200 }}
         transition={{
-          duration: 1, // Control the speed of the tilt
-          ease: "easeInOut", // Smooth easing for a gradual effect
+          duration: 1,
+          ease: "easeInOut",
         }}
       />
 
-      {/* Glitch Effect Layers */}
-      <div className="relative text-6xl font-bold tracking-wide text-black sm:text-8xl">
+      {/* Glitch Effect Clock */}
+      <div className="relative text-6xl font-bold tracking-wide text-zinc-100 sm:text-8xl">
         <span className="relative z-10">{time}</span>
-        <span className="animate-glitch1 absolute inset-0 translate-x-1 translate-y-1 transform text-red-600 opacity-75">
+        <span className="animate-glitch1 absolute inset-0 translate-x-1 translate-y-1 transform text-purple-500/75">
           {time}
         </span>
-        <span className="animate-glitch2 absolute inset-0 -translate-x-1 -translate-y-1 transform text-blue-600 opacity-75">
+        <span className="animate-glitch2 absolute inset-0 -translate-x-1 -translate-y-1 transform text-cyan-400/75">
           {time}
         </span>
       </div>
+
+      {/* Loading Spinner */}
       <div className="fixed top-[85vh] sm:left-[48vw]">
         <motion.div
           className="aspect-square w-12 rounded-full"
           style={{
             background: `
-          radial-gradient(farthest-side, #D91656 95%, transparent) 50% 1px / 12px 12px no-repeat,
-          radial-gradient(farthest-side, transparent calc(100% - 14px), #ccc 0)
-        `,
+              radial-gradient(farthest-side, #9333EA 95%, transparent) 50% 1px / 12px 12px no-repeat,
+              radial-gradient(farthest-side, transparent calc(100% - 14px), #1e1e1e 0)
+            `,
           }}
-          animate={{ rotate: 360 }} // Rotate 360 degrees
+          animate={{ rotate: 360 }}
           transition={{
-            repeat: Infinity, // Loop the rotation
-            duration: 2, // Complete rotation every 2 seconds
-            ease: "linear", // Maintain a smooth, linear rotation
+            repeat: Infinity,
+            duration: 2,
+            ease: "linear",
           }}
-        ></motion.div>
+        />
       </div>
     </div>
   );

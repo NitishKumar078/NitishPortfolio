@@ -2,7 +2,7 @@ import React from "react";
 import about from "@/assets/about-me.png";
 import project from "@/assets/project.png";
 import skill from "@/assets/skill.png";
-
+import { ThemeToggle } from "@/components/ui/theme-toggle";
 import { Dock, DockIcon } from "@/components/ui/dock";
 
 export type IconProps = React.HTMLAttributes<SVGElement>;
@@ -18,7 +18,6 @@ export function Navigation({
   projectsRef,
   skillsRef,
 }: NavigationProps) {
-  // Scroll function for each section
   const scrollToSection = (ref: React.RefObject<HTMLDivElement>) => {
     ref.current?.scrollIntoView({ behavior: "smooth" });
   };
@@ -29,6 +28,7 @@ export function Navigation({
         href="https://github.com/NitishKumar078"
         target="_blank"
         rel="noopener noreferrer"
+        className="transition-transform hover:scale-110"
       >
         <svg viewBox="0 0 438.549 438.549" {...props}>
           <path
@@ -91,32 +91,38 @@ export function Navigation({
   };
 
   return (
-    <nav className="fixed left-[40vw] top-5 z-[999]">
-      <Dock
-        magnification={60}
-        distance={100}
-        className="w-80 justify-center"
-        direction="middle"
-      >
-        <DockIcon className="bg-black/10 p-3 dark:bg-white/10" title="GitHub">
-          <Icons.gitHub className="size-full" />
-        </DockIcon>
+    <nav className="fixed left-0 right-0 top-0 z-[9999] bg-white/80 px-4  backdrop-blur-md dark:bg-zinc-900/80">
+      <div className="flex items-center gap-4">
+        <Dock
+          magnification={60}
+          distance={100}
+          className="w-80 justify-center"
+          direction="middle"
+        >
+          <DockIcon title="theme">
+            <ThemeToggle />
+          </DockIcon>
 
-        <div className="h-full border-l-4 border-[#433878]"></div>
-        <DockIcon className="bg-black/10 p-3 dark:bg-white/10" title="About">
-          <Icons.about />
-        </DockIcon>
-        <DockIcon className="bg-black/10 p-3 dark:bg-white/10" title="Projects">
-          <Icons.project />
-        </DockIcon>
-        <DockIcon className="bg-black/10 p-3 dark:bg-white/10" title="Skills">
-          <Icons.skill />
-        </DockIcon>
-        <div className="h-full border-l-4 border-[#433878]"></div>
-        <DockIcon className="bg-black/10 p-3 dark:bg-white/10" title="linkedIn">
-          <Icons.linkedin />
-        </DockIcon>
-      </Dock>
+          <DockIcon className=" p-3 backdrop-invert" title="GitHub">
+            <Icons.gitHub className="size-full" />
+          </DockIcon>
+
+          <div className="h-full border-l-4 border-[#433878]"></div>
+          <DockIcon className="bg-white p-3" title="About">
+            <Icons.about />
+          </DockIcon>
+          <DockIcon className="bg-white p-3" title="Projects">
+            <Icons.project />
+          </DockIcon>
+          <DockIcon className="bg-white p-3" title="Skills">
+            <Icons.skill />
+          </DockIcon>
+          <div className="h-full border-l-4 border-[#433878]"></div>
+          <DockIcon className="bg-white p-3" title="linkedIn">
+            <Icons.linkedin />
+          </DockIcon>
+        </Dock>
+      </div>
     </nav>
   );
 }
