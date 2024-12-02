@@ -28,6 +28,36 @@ const projects = [
     liveUrl: "https://ai-chat.com",
     githubUrl: "https://github.com/yourusername/ai-chat",
   },
+  ,
+  {
+    title: "AI Chat Application",
+    description:
+      "Real-time chat application with AI-powered responses and natural language processing.",
+    technologies: ["React", "Node.js", "Socket.io", "OpenAI"],
+    imageUrl: "/project-3.jpg",
+    liveUrl: "https://ai-chat.com",
+    githubUrl: "https://github.com/yourusername/ai-chat",
+  },
+  ,
+  {
+    title: "AI Chat Application",
+    description:
+      "Real-time chat application with AI-powered responses and natural language processing.",
+    technologies: ["React", "Node.js", "Socket.io", "OpenAI"],
+    imageUrl: "/project-3.jpg",
+    liveUrl: "https://ai-chat.com",
+    githubUrl: "https://github.com/yourusername/ai-chat",
+  },
+  ,
+  {
+    title: "AI Chat Application",
+    description:
+      "Real-time chat application with AI-powered responses and natural language processing.",
+    technologies: ["React", "Node.js", "Socket.io", "OpenAI"],
+    imageUrl: "/project-3.jpg",
+    liveUrl: "https://ai-chat.com",
+    githubUrl: "https://github.com/yourusername/ai-chat",
+  },
 ];
 
 const ProjectsGrid = () => {

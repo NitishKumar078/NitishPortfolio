@@ -8,18 +8,6 @@
 @tailwind components;
 @tailwind utilities;
 
-@layer utilities {
-  .glass_effect {
-    /* From https://css.glass */
-    background: rgba(54, 58, 60, 0.25);
-    border-radius: 16px;
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-    backdrop-filter: blur(6.1px);
-    -webkit-backdrop-filter: blur(6.1px);
-    border: 1px solid rgba(54, 58, 60, 0.06);
-  }
-}
-
 * {
   cursor: url("./assets/cursor-dark.png"), auto;
 }

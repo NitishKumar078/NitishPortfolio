@@ -19,11 +19,11 @@ export const SkillMonitor = ({ selectedSkill }: SkillMonitorProps) => {
     setDisplayText([]);
 
     const lines = [
-      "> Loading project data...",
-      `> Skill: ${selectedSkill.name}`,
+      `> Selected: ${selectedSkill.name}`,
       "> Projects:",
-      ...selectedSkill.projects.map((project) => `  - ${project}`),
-      "> Process complete",
+      ...selectedSkill.projects.map((project) => `  • ${project}`),
+      "> Experience Level: Advanced",
+      "> Status: Active"
     ];
 
     let currentLine = 0;
@@ -52,14 +52,14 @@ export const SkillMonitor = ({ selectedSkill }: SkillMonitorProps) => {
         currentLine++;
         currentChar = 0;
       }
-    }, 50);
+    }, 25);
 
     return () => clearInterval(typeInterval);
   }, [selectedSkill]);
 
   return (
     <motion.div
-      className="relative m-3 aspect-video w-[80%] max-w-3xl overflow-hidden rounded-lg border-4 border-gray-700 bg-black p-4 font-['Fira_Code'] text-[#2ecc71] shadow-2xl sm:w-[95%]"
+      className="relative m-3 aspect-video w-[80%] max-w-3xl overflow-hidden rounded-lg border-4 border-gray-700 bg-black p-4 font-mono text-[#2ecc71] shadow-2xl sm:w-[95%]"
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       exit={{ opacity: 0, y: -20 }}
@@ -68,7 +68,7 @@ export const SkillMonitor = ({ selectedSkill }: SkillMonitorProps) => {
         <div className="size-3 rounded-full bg-red-500"></div>
         <div className="size-3 rounded-full bg-yellow-500"></div>
         <div className="size-3 rounded-full bg-green-500"></div>
-        <span className="ml-4 text-sm text-gray-400">Terminal</span>
+        <span className="ml-4 text-sm text-gray-400">Skill Details</span>
       </div>
 
       <div className="mt-8 space-y-1">
@@ -78,7 +78,7 @@ export const SkillMonitor = ({ selectedSkill }: SkillMonitorProps) => {
               key={index}
               initial={{ opacity: 0, x: -10 }}
               animate={{ opacity: 1, x: 0 }}
-              className="flex size-80"
+              className="flex"
             >
               <span>{line}</span>
               {index === displayText.length - 1 && isTyping && (

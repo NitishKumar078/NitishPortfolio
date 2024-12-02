@@ -8,11 +8,14 @@ import { Footer } from "./components/Footer/Footer";
 import { motion, AnimatePresence } from "framer-motion";
 import Loading from "./components/loadinganimation/Loading";
 import ProjectsGrid from "@/projects/ProjectsGrid";
+import { ProfileSection } from "./components/About/ProfileSection";
+import { ContactSection } from "./components/Contact/ContactSection";
 
 const App = () => {
   const aboutRef = useRef(null);
   const projectsRef = useRef(null);
   const skillsRef = useRef(null);
+  const contactRef = useRef(null);
 
   const [isLoading, setIsLoading] = useState(true);
 
@@ -26,6 +29,8 @@ const App = () => {
 
   return (
     <div className="dark:text-white">
+      <div className="fixed inset-0 -z-10 bg-dotted-pattern-light bg-15 dark:bg-dotted-pattern" />
+
       <AnimatePresence>
         {isLoading ? (
           <motion.div
@@ -37,15 +42,13 @@ const App = () => {
             <Loading />
           </motion.div>
         ) : (
-          <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-            <div className="fixed inset-0 -z-10 bg-dotted-pattern-light bg-15 dark:bg-dotted-pattern" />
-
+          <div className="relative mx-auto max-w-7xl px-4">
             <Navigation
               aboutRef={aboutRef}
               projectsRef={projectsRef}
               skillsRef={skillsRef}
+              contactRef={contactRef}
             />
-
             <main className="pt-16">
               <section className="flex min-h-[80vh] items-center justify-center py-12">
                 <Greeting />
@@ -58,7 +61,12 @@ const App = () => {
                   duration={50}
                   animateOnLoad={false}
                 />
-                <TracingBeamDemo />
+                <div className="mt-12">
+                  <ProfileSection />
+                </div>
+                <div className="mt-12">
+                  <TracingBeamDemo />
+                </div>
               </section>
 
               <section ref={projectsRef} className="py-16">
@@ -80,6 +88,18 @@ const App = () => {
                 />
                 <div className="mt-12 flex justify-center align-middle">
                   <Skills />
+                </div>
+              </section>
+
+              <section ref={contactRef} className="py-16">
+                <HyperText
+                  text="CONTACT"
+                  className="border-slate-300 text-center font-Permanent_Marker text-3xl sm:text-4xl"
+                  duration={50}
+                  animateOnLoad={false}
+                />
+                <div className="mt-12">
+                  <ContactSection />
                 </div>
               </section>
             </main>

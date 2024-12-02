@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
+import "./Loading.css";
 
 const Loading = () => {
   const [time, setTime] = useState("");
@@ -20,53 +21,36 @@ const Loading = () => {
   }, []);
 
   return (
-    <div className="relative flex h-screen w-full items-center justify-center bg-white dark:bg-zinc-900">
+    <div className="relative flex h-screen w-full items-center justify-center">
       {/* Dark Theme Triangle Background */}
       <motion.div
-        className="absolute h-0 w-0 border-b-[400px] border-l-[200px] border-r-[200px] border-b-black border-l-transparent border-r-transparent dark:border-b-purple-600/20"
+        className="absolute h-0 w-0 border-b-[400px] border-l-[200px] border-r-[200px] border-b-[#9234eb] border-l-transparent border-r-transparent"
         animate={{ rotateX: 200, rotateY: 200 }}
-        transition={{
-          duration: 1,
-          ease: "easeInOut",
-        }}
+        transition={{ duration: 1, ease: "easeInOut" }}
       />
       <motion.div
-        className="absolute h-0 w-0 border-b-[390px] border-l-[190px] border-r-[190px] border-b-white border-l-transparent border-r-transparent dark:border-b-zinc-900"
+        className="border-dotted-pattern-light dark:border-dotted-pattern absolute h-0 w-0 border-b-[390px] border-l-[190px] border-r-[190px] border-l-transparent border-r-transparent dark:border-l-transparent dark:border-r-transparent"
         animate={{ rotateX: 200, rotateY: 200 }}
-        transition={{
-          duration: 1,
-          ease: "easeInOut",
-        }}
+        transition={{ duration: 1, ease: "easeInOut" }}
       />
 
       {/* Glitch Effect Clock */}
-      <div className="relative text-6xl font-bold tracking-wide text-black dark:text-zinc-100 sm:text-8xl">
-        <span className="relative z-10">{time}</span>
-        <span className="absolute inset-0 translate-x-1 translate-y-1 transform animate-glitch1 text-red-600 dark:text-purple-500/75">
+      <div className="loader">
+        <div
+          data-glitch={time}
+          className="glitch text-6xl font-bold tracking-wide text-zinc-100 sm:text-8xl"
+        >
           {time}
-        </span>
-        <span className="absolute inset-0 -translate-x-1 -translate-y-1 transform animate-glitch2 text-blue-600 dark:text-cyan-400/75">
-          {time}
-        </span>
+        </div>
       </div>
 
       {/* Loading Spinner */}
       <div className="fixed top-[85vh] sm:left-[48vw]">
-        <motion.div
-          className="aspect-square w-12 rounded-full"
-          style={{
-            background: `
-              radial-gradient(farthest-side, #9333EA 95%, transparent) 50% 1px / 12px 12px no-repeat,
-              radial-gradient(farthest-side, transparent calc(100% - 14px), #1e1e1e 0)
-            `,
-          }}
-          animate={{ rotate: 360 }}
-          transition={{
-            repeat: Infinity,
-            duration: 2,
-            ease: "linear",
-          }}
-        />
+        <div className="flex w-full flex-col items-center justify-center gap-4">
+          <div className="flex h-16 w-16 animate-spin items-center justify-center rounded-full border-4 border-transparent border-t-blue-400 text-4xl text-blue-400">
+            <div className="flex h-12 w-12 animate-spin items-center justify-center rounded-full border-4 border-transparent border-t-red-400 text-2xl text-red-400"></div>
+          </div>
+        </div>
       </div>
     </div>
   );
