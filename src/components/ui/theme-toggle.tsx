@@ -1,27 +1,29 @@
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
+import { useTheme } from "@/hooks/useTheme";
 
 export const ThemeToggle = () => {
-  const [isDark, setIsDark] = useState(false);
+  const { theme, toggleTheme } = useTheme();
+  const [mounted, setMounted] = useState(false);
 
+  // Prevent hydration mismatch
   useEffect(() => {
-    const isDarkMode = document.documentElement.classList.contains("dark");
-    setIsDark(isDarkMode);
+    setMounted(true);
   }, []);
 
-  const toggleTheme = () => {
-    document.documentElement.classList.toggle("dark");
-    setIsDark(!isDark);
-  };
+  if (!mounted) {
+    return null;
+  }
 
   return (
     <motion.button
       whileHover={{ scale: 1.1 }}
       whileTap={{ scale: 0.9 }}
       onClick={toggleTheme}
-      className="rounded-full bg-zinc-100 p-2 text-zinc-900 shadow-md dark:bg-zinc-800 dark:text-zinc-100"
+      className="rounded-full bg-zinc-100 p-2 text-zinc-900 shadow-md transition-colors duration-300 dark:bg-zinc-800 dark:text-zinc-100"
+      aria-label={`Switch to ${theme === "dark" ? "light" : "dark"} theme`}
     >
-      {isDark ? (
+      {theme === "dark" ? (
         <svg
           xmlns="http://www.w3.org/2000/svg"
           fill="none"

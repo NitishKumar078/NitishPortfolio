@@ -9,11 +9,14 @@ interface SkillMonitorProps {
 }
 
 export const SkillMonitor = ({ selectedSkill }: SkillMonitorProps) => {
-  const [displayText, setDisplayText] = useState<string[]>([]);
+  const [displayText, setDisplayText] = useState<string[]>(["Hello world ..."]);
   const [isTyping, setIsTyping] = useState(false);
 
   useEffect(() => {
-    if (!selectedSkill) return;
+    if (!selectedSkill) {
+      setDisplayText(["Hello world ..."]);
+      return;
+    }
 
     setIsTyping(true);
     setDisplayText([]);
@@ -23,7 +26,7 @@ export const SkillMonitor = ({ selectedSkill }: SkillMonitorProps) => {
       "> Projects:",
       ...selectedSkill.projects.map((project) => `  • ${project}`),
       "> Experience Level: Advanced",
-      "> Status: Active"
+      "> Status: Active",
     ];
 
     let currentLine = 0;

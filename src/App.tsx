@@ -42,70 +42,72 @@ const App = () => {
             <Loading />
           </motion.div>
         ) : (
-          <div className="relative mx-auto max-w-7xl px-4">
+          <>
             <Navigation
               aboutRef={aboutRef}
               projectsRef={projectsRef}
               skillsRef={skillsRef}
               contactRef={contactRef}
             />
-            <main className="pt-16">
-              <section className="flex min-h-[80vh] items-center justify-center py-12">
-                <Greeting />
-              </section>
+            <div className="relative mx-auto max-w-7xl px-4">
+              <main className="pt-16">
+                <section className="flex min-h-[80vh] items-center justify-center py-12">
+                  <Greeting />
+                </section>
 
-              <section ref={aboutRef} className="py-16">
-                <HyperText
-                  text="ABOUT ME"
-                  className="border-slate-300 text-center font-Permanent_Marker text-3xl sm:text-4xl"
-                  duration={50}
-                  animateOnLoad={false}
-                />
-                <div className="mt-12">
-                  <ProfileSection />
-                </div>
-                <div className="mt-12">
-                  <TracingBeamDemo />
-                </div>
-              </section>
+                <section ref={aboutRef} className="py-16">
+                  <HyperText
+                    text="ABOUT ME"
+                    className="border-slate-300 text-center font-Permanent_Marker text-3xl sm:text-4xl"
+                    duration={50}
+                    animateOnLoad={false}
+                  />
+                  <div className="mt-12">
+                    <ProfileSection />
+                  </div>
+                  <div className="mt-12">
+                    <TracingBeamDemo />
+                  </div>
+                </section>
 
-              <section ref={projectsRef} className="py-16">
-                <HyperText
-                  text="PROJECT's"
-                  className="border-slate-300 text-center font-Permanent_Marker text-3xl sm:text-4xl"
-                  duration={50}
-                  animateOnLoad={false}
-                />
-                <ProjectsGrid />
-              </section>
+                <section ref={projectsRef} className="py-16">
+                  <HyperText
+                    text="PROJECT's"
+                    className="border-slate-300 text-center font-Permanent_Marker text-3xl sm:text-4xl"
+                    duration={50}
+                    animateOnLoad={false}
+                  />
+                  <ProjectsGrid />
+                </section>
 
-              <section ref={skillsRef} className="py-16">
-                <HyperText
-                  text="SKILL's"
-                  className="border-slate-300 text-center font-Permanent_Marker text-3xl sm:text-4xl"
-                  duration={50}
-                  animateOnLoad={false}
-                />
-                <div className="mt-12 flex justify-center align-middle">
-                  <Skills />
-                </div>
-              </section>
+                <section ref={skillsRef} className="py-16">
+                  <HyperText
+                    text="SKILL's"
+                    className="border-slate-300 text-center font-Permanent_Marker text-3xl sm:text-4xl"
+                    duration={50}
+                    animateOnLoad={false}
+                  />
+                  <div className="mt-12 flex justify-center align-middle">
+                    <Skills />
+                  </div>
+                </section>
 
-              <section ref={contactRef} className="py-16">
-                <HyperText
-                  text="CONTACT"
-                  className="border-slate-300 text-center font-Permanent_Marker text-3xl sm:text-4xl"
-                  duration={50}
-                  animateOnLoad={false}
-                />
-                <div className="mt-12">
-                  <ContactSection />
-                </div>
-              </section>
-            </main>
+                <section ref={contactRef} className="py-16">
+                  <HyperText
+                    text="CONTACT"
+                    className="border-slate-300 text-center font-Permanent_Marker text-3xl sm:text-4xl"
+                    duration={50}
+                    animateOnLoad={false}
+                  />
+                  <div className="mt-12">
+                    <ContactSection />
+                  </div>
+                </section>
+              </main>
 
-            <Footer />
-          </div>
+              <Footer />
+            </div>
+          </>
         )}
       </AnimatePresence>
     </div>
