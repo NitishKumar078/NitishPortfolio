@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import { motion } from "framer-motion";
 import { ClockFace } from "./ClockFace";
 import { TriangleBackground } from "./TriangleBackground";
 import { DottedBackground } from "./DottedBackground";

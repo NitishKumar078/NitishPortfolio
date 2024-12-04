@@ -10,8 +10,10 @@ import Loading from "./components/loadinganimation/Loading";
 import ProjectsGrid from "@/projects/ProjectsGrid";
 import { ProfileSection } from "./components/About/ProfileSection";
 import { ContactSection } from "./components/Contact/ContactSection";
+import { useTheme } from "@/hooks/useTheme";
 
 const App = () => {
+  const { theme } = useTheme();
   const aboutRef = useRef(null);
   const projectsRef = useRef(null);
   const skillsRef = useRef(null);
@@ -26,6 +28,12 @@ const App = () => {
 
     return () => clearTimeout(timer);
   }, []);
+  const navRefs = {
+    aboutRef,
+    skillsRef,
+    projectsRef,
+    contactRef,
+  };
 
   return (
     <div className="dark:text-white">
@@ -43,12 +51,7 @@ const App = () => {
           </motion.div>
         ) : (
           <>
-            <Navigation
-              aboutRef={aboutRef}
-              projectsRef={projectsRef}
-              skillsRef={skillsRef}
-              contactRef={contactRef}
-            />
+            <Navigation navRefs={navRefs} />
             <div className="relative mx-auto max-w-7xl px-4">
               <main className="pt-16">
                 <section className="flex min-h-[80vh] items-center justify-center py-12">
