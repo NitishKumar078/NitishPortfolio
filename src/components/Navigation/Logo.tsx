@@ -7,7 +7,10 @@ export const Logo = () => {
       whileTap={{ scale: 0.95 }}
       className="flex items-center"
     >
-      <a href="/" className="text-2xl font-bold text-zinc-900 dark:text-white">
+      <a
+        href="/"
+        className="bg-gradient-to-r from-purple-500 to-pink-600 bg-clip-text text-2xl font-bold text-transparent"
+      >
         NKM
       </a>
     </motion.div>
