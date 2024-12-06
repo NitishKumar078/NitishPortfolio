@@ -8,6 +8,6 @@
 @tailwind components;
 @tailwind utilities;
 
-* {
-  cursor: url("./assets/cursor-dark.png"), auto;
+* .dark {
+  cursor: url("./assets/cursor-light.png"), auto;
 }

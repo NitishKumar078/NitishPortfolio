@@ -31,13 +31,11 @@ export const ContactSection = () => {
 
   return (
     <div className="mx-auto max-w-4xl space-y-8 px-4">
-      <motion.h2
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        className="text-center text-3xl font-bold text-zinc-800 dark:text-zinc-100"
-      >
-        Let's Connect
-      </motion.h2>
+      <h2 className="mb-12 text-center text-3xl font-bold sm:text-4xl">
+        <span className="bg-gradient-to-tr from-[#8c48d4] to-[#2575fc] bg-clip-text text-transparent">
+          Let's Connect
+        </span>
+      </h2>
 
       <motion.div
         initial={{ opacity: 0, y: 20 }}

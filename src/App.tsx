@@ -1,5 +1,5 @@
 import { useRef, useState, useEffect } from "react";
-import { Greeting } from "./components/Sections/Greeting";
+import Greeting from "./components/greeting/Greeting";
 import { Navigation } from "./components/Navigation/Navigation";
 import { TracingBeamDemo } from "./components/tracing";
 import HyperText from "./components/ui/hyper-text";
@@ -7,13 +7,13 @@ import { Skills } from "./components/Skills/Skills";
 import { Footer } from "./components/Footer/Footer";
 import { motion, AnimatePresence } from "framer-motion";
 import Loading from "./components/loadinganimation/Loading";
-import ProjectsGrid from "@/projects/ProjectsGrid";
-import { ProfileSection } from "./components/About/ProfileSection";
+import Projects from "@/projects/Projects";
+import AboutSection from "./components/About/AboutSection";
 import { ContactSection } from "./components/Contact/ContactSection";
 import { useTheme } from "@/hooks/useTheme";
 
 const App = () => {
-  const { theme } = useTheme();
+  useTheme();
   const aboutRef = useRef(null);
   const projectsRef = useRef(null);
   const skillsRef = useRef(null);
@@ -53,61 +53,32 @@ const App = () => {
           <>
             <Navigation navRefs={navRefs} />
             <div className="relative mx-auto max-w-7xl px-4">
-              <main className="pt-16">
-                <section className="flex min-h-[80vh] items-center justify-center py-12">
+              <main>
+                <section className="flex min-h-[80vh] items-center justify-center">
                   <Greeting />
                 </section>
 
                 <section ref={aboutRef} className="py-16">
-                  <HyperText
-                    text="ABOUT ME"
-                    className="border-slate-300 text-center font-Permanent_Marker text-3xl sm:text-4xl"
-                    duration={50}
-                    animateOnLoad={false}
-                  />
-                  <div className="mt-12">
-                    <ProfileSection />
-                  </div>
+                  <AboutSection />
                   <div className="mt-12">
                     <TracingBeamDemo />
                   </div>
                 </section>
 
-                <section ref={projectsRef} className="py-16">
-                  <HyperText
-                    text="PROJECT's"
-                    className="border-slate-300 text-center font-Permanent_Marker text-3xl sm:text-4xl"
-                    duration={50}
-                    animateOnLoad={false}
-                  />
-                  <ProjectsGrid />
+                <section ref={projectsRef}>
+                  <Projects />
                 </section>
 
                 <section ref={skillsRef} className="py-16">
-                  <HyperText
-                    text="SKILL's"
-                    className="border-slate-300 text-center font-Permanent_Marker text-3xl sm:text-4xl"
-                    duration={50}
-                    animateOnLoad={false}
-                  />
-                  <div className="mt-12 flex justify-center align-middle">
-                    <Skills />
-                  </div>
+                  <Skills />
                 </section>
 
                 <section ref={contactRef} className="py-16">
-                  <HyperText
-                    text="CONTACT"
-                    className="border-slate-300 text-center font-Permanent_Marker text-3xl sm:text-4xl"
-                    duration={50}
-                    animateOnLoad={false}
-                  />
                   <div className="mt-12">
                     <ContactSection />
                   </div>
                 </section>
               </main>
-
               <Footer />
             </div>
           </>

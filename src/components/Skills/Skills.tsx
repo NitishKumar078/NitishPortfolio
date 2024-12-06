@@ -2,6 +2,7 @@ import { cn } from "@/utils/cn";
 import Marquee from "./marquee";
 import MonitorScreen from "./MonitorScreen";
 import { useState } from "react";
+import { div } from "framer-motion/client";
 
 const skills = [
   {
@@ -93,23 +94,38 @@ export function Skills() {
   } | null>(null);
 
   return (
-    <div className="relative flex h-[500px] w-[85vw] flex-row items-center justify-between gap-6 overflow-hidden rounded-lg border bg-background sm:w-[60vw] md:shadow-xl">
-      <Marquee pauseOnHover vertical className="[--duration:20s]">
-        {firstRow.map((skill) => (
-          <SkillCard key={skill.name} {...skill} setHoverCard={setHoverCard} />
-        ))}
-      </Marquee>
+    <div className="mt-12 flex flex-col items-center">
+      <h2 className="mb-12 text-center text-3xl font-bold sm:text-4xl">
+        <span className="bg-gradient-to-tr from-[#8c48d4] to-[#2575fc] bg-clip-text text-transparent">
+          Project's
+        </span>
+      </h2>
+      <div className="relative flex h-[500px] w-[85vw] flex-row items-center justify-between gap-6 overflow-hidden rounded-lg border-black bg-background dark:border sm:w-[60vw] md:shadow-xl">
+        <Marquee pauseOnHover vertical className="[--duration:20s]">
+          {firstRow.map((skill) => (
+            <SkillCard
+              key={skill.name}
+              {...skill}
+              setHoverCard={setHoverCard}
+            />
+          ))}
+        </Marquee>
 
-      <MonitorScreen hoverCard={hoverCard} />
+        <MonitorScreen hoverCard={hoverCard} />
 
-      <Marquee reverse pauseOnHover vertical className="[--duration:20s]">
-        {secondRow.map((skill) => (
-          <SkillCard key={skill.name} {...skill} setHoverCard={setHoverCard} />
-        ))}
-      </Marquee>
+        <Marquee reverse pauseOnHover vertical className="[--duration:20s]">
+          {secondRow.map((skill) => (
+            <SkillCard
+              key={skill.name}
+              {...skill}
+              setHoverCard={setHoverCard}
+            />
+          ))}
+        </Marquee>
 
-      <div className="pointer-events-none absolute inset-x-0 top-0 h-[17%] bg-gradient-to-b from-white dark:from-background"></div>
-      <div className="pointer-events-none absolute inset-x-0 bottom-0 h-[17%] bg-gradient-to-t from-white dark:from-background"></div>
+        <div className="pointer-events-none absolute inset-x-0 top-0 h-[17%] bg-gradient-to-b from-white dark:from-background"></div>
+        <div className="pointer-events-none absolute inset-x-0 bottom-0 h-[17%] bg-gradient-to-t from-white dark:from-background"></div>
+      </div>
     </div>
   );
 }

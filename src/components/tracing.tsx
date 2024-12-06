@@ -2,8 +2,8 @@ import { TracingBeam } from "./ui/tracing-beam";
 import GradualSpacing from "./ui/gradual-spacing";
 import BlurIn from "./ui/blur-in";
 import { BoxReveal } from "./ui/box-reveal";
-import Reading from "@/assets/Reading.png";
-import Work from "@/assets/working.png";
+import Reading from "@/assets/learning-animate.svg";
+import Work from "@/assets/working-animate.svg";
 
 const dummyContent = [
   {
@@ -62,7 +62,7 @@ const dummyContent = [
 
 export function TracingBeamDemo() {
   return (
-    <div className="relative mx-auto mt-8 max-w-5xl rounded-xl bg-gray-100 p-4 text-zinc-800/80 shadow-2xl dark:bg-zinc-800/80 dark:text-zinc-100 md:p-8">
+    <div className="relative mx-auto mt-8 max-w-6xl rounded-xl bg-gray-100 p-4 text-zinc-900/80 shadow-2xl dark:bg-zinc-900/80 dark:text-zinc-100 md:p-8">
       <TracingBeam>
         <div className="mx-auto max-w-4xl">
           {dummyContent.map((item, index) => (
@@ -77,7 +77,7 @@ export function TracingBeamDemo() {
               <div className="prose prose-sm dark:prose-invert mb-8">
                 <BlurIn
                   word={item.description}
-                  className="text-base text-zinc-800 md:text-lg"
+                  className="text-base text-zinc-800 dark:text-zinc-100 md:text-lg"
                   variant={{
                     hidden: { filter: "blur(10px)", opacity: 0 },
                     visible: { filter: "blur(0px)", opacity: 1 },
