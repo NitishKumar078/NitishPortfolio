@@ -1,5 +1,13 @@
 import { motion } from "framer-motion";
-import { ProjectCardProps } from "@/types/project";
+
+interface ProjectCardProps {
+  title: string;
+  description: string;
+  technologies: Array<string>;
+  imageUrl: string;
+  liveUrl: string;
+  githubUrl: string;
+}
 
 export const ProjectCard = ({
   title,
@@ -33,7 +41,7 @@ export const ProjectCard = ({
         </p>
 
         <div className="flex flex-wrap gap-2">
-          {technologies.map((tech: Array<string>, index: number) => (
+          {technologies.map((tech, index: number) => (
             <span
               key={index}
               className="rounded-full bg-purple-100 px-3 py-1 text-xs font-medium text-purple-600 dark:bg-purple-900/30 dark:text-purple-300"

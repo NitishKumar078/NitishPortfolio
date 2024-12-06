@@ -2,7 +2,6 @@ import { cn } from "@/utils/cn";
 import Marquee from "./marquee";
 import MonitorScreen from "./MonitorScreen";
 import { useState } from "react";
-import { div } from "framer-motion/client";
 
 const skills = [
   {

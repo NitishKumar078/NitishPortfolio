@@ -63,8 +63,17 @@ const projects = [
 const ProjectsGrid = () => {
   return (
     <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
-      {projects.map((project, index) => (
-        <ProjectCard key={index} {...project} />
+      {projects.map((project) => (
+        <ProjectCard
+          title={project?.title || "Project Title"}
+          description={project?.description || "Project Description"}
+          technologies={project?.technologies || []}
+          imageUrl={project?.imageUrl || "project image url"}
+          liveUrl={project?.liveUrl || "https://example.com"}
+          githubUrl={
+            project?.githubUrl || "https://github.com/yourusername/project"
+          }
+        />
       ))}
     </div>
   );
