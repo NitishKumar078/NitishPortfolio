@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Github, Linkedin, Mail, FileText } from "lucide-react";
+import { Github, Linkedin, Mail } from "lucide-react";
 
 export const ContactSection = () => {
   const contactLinks = [
@@ -21,12 +21,6 @@ export const ContactSection = () => {
       href: "https://github.com/yourusername",
       color: "hover:text-gray-500",
     },
-    {
-      icon: <FileText className="h-6 w-6" />,
-      label: "Resume",
-      href: "/resume.pdf",
-      color: "hover:text-green-500",
-    },
   ];
 
   return (
@@ -41,9 +35,9 @@ export const ContactSection = () => {
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.2 }}
-        className="grid grid-cols-2 gap-4 sm:grid-cols-4"
+        className="grid grid-cols-3 items-center gap-5 sm:grid-cols-3"
       >
-        {contactLinks.map((link, index) => (
+        {contactLinks.map((link) => (
           <a
             key={link.label}
             href={link.href}
@@ -107,7 +101,7 @@ export const ContactSection = () => {
           </div>
           <button
             type="submit"
-            className="w-full rounded-md bg-purple-600 px-4 py-2 text-white shadow-lg transition-all duration-300 hover:bg-purple-700 focus:outline-none focus:ring-2 focus:ring-purple-500/50 focus:ring-offset-2"
+            className="hover:cursor-hand w-full rounded-md bg-gradient-to-tr from-[#6a11cb] to-[#2575fc] px-4 py-2 text-white shadow-lg transition-all duration-300 hover:bg-gradient-to-tr hover:from-[#2575fc] hover:to-[#6a11cb] focus:outline-none focus:ring-2 focus:ring-purple-500/50 focus:ring-offset-2"
           >
             Send Message
           </button>
