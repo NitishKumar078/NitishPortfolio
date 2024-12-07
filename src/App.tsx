@@ -2,8 +2,7 @@ import { useRef, useState, useEffect } from "react";
 import Greeting from "./components/greeting/Greeting";
 import { Navigation } from "./components/Navigation/Navigation";
 import { TracingBeamDemo } from "./components/tracing";
-import HyperText from "./components/ui/hyper-text";
-import { Skills } from "./components/Skills/Skills";
+import SkillsSection from "./components/Skills/Skills";
 import { Footer } from "./components/Footer/Footer";
 import { motion, AnimatePresence } from "framer-motion";
 import Loading from "./components/loadinganimation/Loading";
@@ -55,7 +54,7 @@ const App = () => {
             <div className="relative mx-auto max-w-7xl px-4">
               <main>
                 <section className="flex min-h-[80vh] items-center justify-center">
-                  <Greeting />
+                  <Greeting projectsRef={projectsRef} contactRef={contactRef} />
                 </section>
 
                 <section ref={aboutRef} className="py-16">
@@ -70,13 +69,11 @@ const App = () => {
                 </section>
 
                 <section ref={skillsRef} className="py-16">
-                  <Skills />
+                  <SkillsSection />
                 </section>
 
                 <section ref={contactRef} className="py-16">
-                  <div className="mt-12">
-                    <ContactSection />
-                  </div>
+                  <ContactSection />
                 </section>
               </main>
               <Footer />

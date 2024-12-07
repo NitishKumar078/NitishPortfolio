@@ -44,9 +44,9 @@ export const DottedBackground = () => {
 
   const generateDots = () => {
     const dots = [];
-    const spacing = 40;
-    const rows = 21;
-    const cols = 21;
+    const spacing = 30;
+    const rows = 14;
+    const cols = 14;
 
     for (let i = 0; i < rows; i++) {
       for (let j = 0; j < cols; j++) {
