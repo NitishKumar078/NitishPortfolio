@@ -1,62 +1,50 @@
 import { ProjectCard } from "./ProjectCard";
+import invoice from "../assets/invoice.png";
 
 const projects = [
   {
-    title: "Modern Portfolio",
+    title: "Invoice-Book",
     description:
-      "A responsive portfolio website built with React and Tailwind CSS featuring smooth animations and dark mode support.",
-    technologies: ["React", "TypeScript", "Tailwind CSS", "Framer Motion"],
-    imageUrl: "/project-1.jpg",
+      "A responsive web application built with React and Tailwind CSS featuring smooth Exprience and a user-friendly interface to generate and manage invoices.",
+    technologies: ["React", "TypeScript", "Tailwind CSS", "Tauri", "Rust"],
+    imageUrl: invoice,
     liveUrl: "https://your-portfolio.com",
-    githubUrl: "https://github.com/yourusername/portfolio",
+    githubUrl: "https://github.com/NitishKumar078/Invoice-Book",
   },
   {
-    title: "E-commerce Dashboard",
+    title: "Path_finder",
     description:
-      "Full-featured admin dashboard for managing products, orders, and customers with real-time analytics.",
-    technologies: ["Next.js", "TypeScript", "Prisma", "tRPC"],
+      "Implemented and demonstrated the functionality of five distinct path-finding algorithms, including BFS, DFS, Dijkstra's, A*, and Greedy algorithms.",
+    technologies: ["js", "TypeScript", "Prisma", "tRPC"],
     imageUrl: "/project-2.jpg",
-    liveUrl: "https://dashboard-demo.com",
-    githubUrl: "https://github.com/yourusername/dashboard",
+    liveUrl: "https://nitishkumar078.github.io/Path_finder/",
+    githubUrl: "https://github.com/NitishKumar078/Path_finder",
   },
   {
-    title: "AI Chat Application",
+    title: "YTTabMaster",
     description:
-      "Real-time chat application with AI-powered responses and natural language processing.",
-    technologies: ["React", "Node.js", "Socket.io", "OpenAI"],
+      "Seamlessly manage your YouTube experience. This extension automatically pauses and plays videos when you switch tabs, Additionally, enjoy the convenience of running YouTube directly in side regless in which page you are.",
+    technologies: ["React", "Chrome Extension", "Chrome api"],
     imageUrl: "/project-3.jpg",
-    liveUrl: "https://ai-chat.com",
-    githubUrl: "https://github.com/yourusername/ai-chat",
-  },
-  ,
-  {
-    title: "AI Chat Application",
-    description:
-      "Real-time chat application with AI-powered responses and natural language processing.",
-    technologies: ["React", "Node.js", "Socket.io", "OpenAI"],
-    imageUrl: "/project-3.jpg",
-    liveUrl: "https://ai-chat.com",
-    githubUrl: "https://github.com/yourusername/ai-chat",
+    githubUrl: "https://github.com/NitishKumar078/YTTabMaster",
   },
   ,
   {
-    title: "AI Chat Application",
+    title: "Text-Extractor",
     description:
-      "Real-time chat application with AI-powered responses and natural language processing.",
-    technologies: ["React", "Node.js", "Socket.io", "OpenAI"],
+      "This is a web_Extensions which help to scrape the text for the selected html element in the browser.",
+    technologies: ["React", "Chrome Extension", "Chrome api"],
     imageUrl: "/project-3.jpg",
-    liveUrl: "https://ai-chat.com",
-    githubUrl: "https://github.com/yourusername/ai-chat",
+    githubUrl: "https://github.com/NitishKumar078/Text-Extractor",
   },
   ,
   {
-    title: "AI Chat Application",
+    title: "Audio-Processing",
     description:
-      "Real-time chat application with AI-powered responses and natural language processing.",
-    technologies: ["React", "Node.js", "Socket.io", "OpenAI"],
+      "Audio Extraction from given video and processing it to transcript(speech to text)",
+    technologies: ["python", "thinter"],
     imageUrl: "/project-3.jpg",
-    liveUrl: "https://ai-chat.com",
-    githubUrl: "https://github.com/yourusername/ai-chat",
+    githubUrl: "https://github.com/NitishKumar078/Audio-Processing",
   },
 ];
 
@@ -69,7 +57,7 @@ const ProjectsGrid = () => {
           description={project?.description || "Project Description"}
           technologies={project?.technologies || []}
           imageUrl={project?.imageUrl || "project image url"}
-          liveUrl={project?.liveUrl || "https://example.com"}
+          liveUrl={project?.liveUrl || "/"}
           githubUrl={
             project?.githubUrl || "https://github.com/yourusername/project"
           }
