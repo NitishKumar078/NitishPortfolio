@@ -1,15 +1,16 @@
-import { useRef, useState, useEffect } from "react";
+import { useRef, useState, useEffect, Suspense, lazy } from "react";
 import Greeting from "./components/greeting/Greeting";
 import { Navigation } from "./components/Navigation/Navigation";
-import { TracingBeamDemo } from "./components/tracing";
-import SkillsSection from "./components/Skills/Skills";
-import { Footer } from "./components/Footer/Footer";
+import { TracingBeamDemo } from "./components/About/tracing";
 import { motion, AnimatePresence } from "framer-motion";
 import Loading from "./components/loadinganimation/Loading";
-import Projects from "@/projects/Projects";
-import AboutSection from "./components/About/AboutSection";
 import { ContactSection } from "./components/Contact/ContactSection";
 import { useTheme } from "@/hooks/useTheme";
+
+// Lazy loaded components
+const Projects = lazy(() => import("@/projects/Projects"));
+const AboutSection = lazy(() => import("./components/About/AboutSection"));
+const SkillsSection = lazy(() => import("./components/Skills/Skills"));
 
 const App = () => {
   useTheme();
@@ -27,6 +28,7 @@ const App = () => {
 
     return () => clearTimeout(timer);
   }, []);
+
   const navRefs = {
     aboutRef,
     skillsRef,
@@ -34,11 +36,18 @@ const App = () => {
     contactRef,
   };
 
+  const pageTransition = {
+    initial: { opacity: 0, y: 50 },
+    animate: { opacity: 1, y: 0 },
+    exit: { opacity: 0, y: -50 },
+    transition: { duration: 0.8 },
+  };
+
   return (
     <div className="dark:text-white">
       <div className="fixed inset-0 -z-10 bg-dotted-pattern-light bg-15 dark:bg-dotted-pattern" />
 
-      <AnimatePresence>
+      <AnimatePresence mode="wait">
         {isLoading ? (
           <motion.div
             key="loading"
@@ -49,36 +58,43 @@ const App = () => {
             <Loading />
           </motion.div>
         ) : (
-          <>
+          <motion.div
+            key="main-content"
+            {...pageTransition}
+            className="relative mx-auto max-w-7xl px-4"
+          >
             <Navigation navRefs={navRefs} />
-            <div className="relative mx-auto max-w-7xl px-4">
-              <main>
-                <section className="flex min-h-[80vh] items-center justify-center">
-                  <Greeting projectsRef={projectsRef} contactRef={contactRef} />
-                </section>
+            <main>
+              <section className="flex min-h-[80vh] items-center justify-center">
+                <Greeting projectsRef={projectsRef} contactRef={contactRef} />
+              </section>
 
-                <section ref={aboutRef} className="py-16">
+              <Suspense fallback={<div>Loading About Section...</div>}>
+                <section ref={aboutRef}>
                   <AboutSection />
                   <div className="mt-12">
                     <TracingBeamDemo />
                   </div>
                 </section>
+              </Suspense>
 
-                <section ref={projectsRef}>
+              <Suspense fallback={<div>Loading Projects...</div>}>
+                <section ref={projectsRef} className="py-16">
                   <Projects />
                 </section>
+              </Suspense>
 
-                <section ref={skillsRef} className="py-16">
+              <Suspense fallback={<div>Loading Skills...</div>}>
+                <section ref={skillsRef} className="py-5">
                   <SkillsSection />
                 </section>
+              </Suspense>
 
-                <section ref={contactRef} className="py-16">
-                  <ContactSection />
-                </section>
-              </main>
-              <Footer />
-            </div>
-          </>
+              <section ref={contactRef} className="py-5">
+                <ContactSection />
+              </section>
+            </main>
+          </motion.div>
         )}
       </AnimatePresence>
     </div>

@@ -27,7 +27,7 @@ const Greeting: React.FC<GreetingProps> = ({ projectsRef, contactRef }) => {
 
   return (
     <section className="relative top-5 flex h-screen w-full items-center justify-between">
-      <div className="relative flex h-full flex-col items-center justify-center gap-40 px-6 text-center sm:flex-row sm:px-20 sm:text-left">
+      <div className="relative flex h-full flex-col items-center justify-center gap-10 px-6 text-center sm:flex-row sm:px-20 sm:text-left">
         {/* Text Content */}
         <div className="w-full">
           <p className="mb-4 text-lg text-gray-800 dark:text-white">
@@ -36,7 +36,7 @@ const Greeting: React.FC<GreetingProps> = ({ projectsRef, contactRef }) => {
               className="font-semibold text-purple-400"
               id="dynamic-greeting"
             >
-              beautiful <span className="text-3xl">{getGreeting()}</span>!
+              beautiful <span className="text-3xl">{getGreeting()}!</span>
             </span>
           </p>
           <h1 className="mb-4 text-4xl font-bold text-gray-800 sm:text-3xl">
@@ -56,7 +56,7 @@ const Greeting: React.FC<GreetingProps> = ({ projectsRef, contactRef }) => {
             I craft innovative web experiences with modern frameworks and
             technologies. Let's create something exceptional.
           </p>
-          <div className="mt-6 animate-slideUp space-x-4">
+          <div className="mt-6 flex animate-slideUp flex-row space-x-4">
             <button
               id="#contact"
               onClick={() => handleonclick(contactRef)}
@@ -74,17 +74,15 @@ const Greeting: React.FC<GreetingProps> = ({ projectsRef, contactRef }) => {
           </div>
         </div>
 
-        {/* Hero Image and Semi-Circle Design */}
-        <div className="relative mt-12 flex items-center justify-center sm:mt-0 sm:w-4/5">
+        <div className="hidden items-center justify-center sm:block sm:w-4/5">
           {/* Semi-Circle Background */}
-          <div className="absolute top-0 -z-10 h-[400px] w-[800px] rounded-full bg-gradient-to-b from-purple-400 via-purple-300 to-purple-100 opacity-30 sm:h-[500px] sm:w-[500px]"></div>
-          <div className="absolute top-10 h-[280px] w-[380px] rounded-full bg-[#c083fc] opacity-40 sm:h-[350px] sm:w-[350px]"></div>
+          <div className="absolute -z-10 h-[300px] w-[300px] rounded-full bg-gradient-to-b from-purple-500 via-pink-400 to-orange-200 opacity-40 sm:h-[450px] sm:w-[450px]"></div>
 
           {/* SVG Illustration */}
           <img
             src={developer_illustration}
             alt="Developer Illustration"
-            className="relative z-10 w-[250px] sm:size-[375px]"
+            className="relative z-10 w-[250px] sm:w-[400px]"
           />
         </div>
       </div>

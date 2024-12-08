@@ -1,5 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
+import GradualSpacing from "../ui/gradual-spacing";
 
 export const BioContent: React.FC = () => {
   return (
@@ -10,9 +11,10 @@ export const BioContent: React.FC = () => {
       className="space-y-6 sm:p-1"
     >
       {/* Title */}
-      <h3 className="text-center text-3xl font-bold text-zinc-800 dark:text-zinc-100 md:text-left">
-        Full Stack Developer
-      </h3>
+      <GradualSpacing
+        className="text-center text-3xl font-bold text-zinc-800 dark:text-zinc-100 md:text-left"
+        text="Software Developer"
+      />
 
       {/* Description */}
       <p className="text-lg leading-relaxed text-zinc-600 dark:text-zinc-300 md:text-justify">

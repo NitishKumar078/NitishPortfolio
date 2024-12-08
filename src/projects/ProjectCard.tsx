@@ -51,7 +51,7 @@ export const ProjectCard = ({
           ))}
         </div>
 
-        <div className="mt-4 flex gap-4">
+        <div className="group mt-4 flex gap-4">
           <a
             href={liveUrl}
             target="_blank"
