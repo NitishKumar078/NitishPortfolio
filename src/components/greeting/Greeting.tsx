@@ -30,7 +30,7 @@ const Greeting: React.FC<GreetingProps> = ({ projectsRef, contactRef }) => {
       <div className="relative flex h-full flex-col items-center justify-center gap-10 px-6 text-center sm:flex-row sm:px-20 sm:text-left">
         {/* Text Content */}
         <div className="w-full">
-          <p className="mb-4 text-lg text-gray-800 dark:text-white">
+          <p className="mb-4 text-lg text-gray-800 dark:text-zinc-200">
             Welcome, it's a{" "}
             <span
               className="font-semibold text-purple-400"
@@ -39,7 +39,7 @@ const Greeting: React.FC<GreetingProps> = ({ projectsRef, contactRef }) => {
               beautiful <span className="text-3xl">{getGreeting()}!</span>
             </span>
           </p>
-          <h1 className="mb-4 text-4xl font-bold text-gray-800 sm:text-3xl">
+          <h1 className="mb-4 text-4xl font-bold text-gray-800 dark:text-zinc-200 sm:text-3xl">
             I’m{" "}
             <TypingAnimation
               className="inline bg-gradient-to-r from-purple-400 to-pink-500 bg-clip-text text-transparent sm:text-5xl"
