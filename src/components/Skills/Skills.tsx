@@ -2,24 +2,57 @@ import React from "react";
 
 const skills = [
   {
-    name: "React",
+    name: "python",
     image:
-      "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg",
-    description: "Expert in building interactive user interfaces and SPAs.",
-  },
-  {
-    name: "Node.js",
-    image: "https://via.placeholder.com/80",
+      "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg",
     description: "Proficient in backend development and API creation.",
   },
   {
-    name: "TypeScdript",
-    image: "https://via.placeholder.com/80",
+    name: "csharp",
+    image:
+      "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/csharp/csharp-plain.svg",
+    description: "Proficient in backend development and API creation.",
+  },
+  {
+    name: "JS",
+    image:
+      "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg",
+    description: "Expert in building interactive user interfaces and SPAs.",
+  },
+  {
+    name: "React",
+    image:
+      "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg",
+    description: "Proficient in backend development and API creation.",
+  },
+  {
+    name: "Electron",
+    image:
+      "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/electron/electron-original.svg",
     description: "Experienced in writing scalable and type-safe code.",
   },
   {
-    name: "TypeScript",
-    image: "https://via.placeholder.com/80",
+    name: "Tauri",
+    image:
+      "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tauri/tauri-original.svg",
+    description: "Experienced in writing scalable and type-safe code.",
+  },
+  {
+    name: "Redux",
+    image:
+      "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/redux/redux-original.svg",
+    description: "Experienced in writing scalable and type-safe code.",
+  },
+  {
+    name: "mongodb",
+    image:
+      "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mongodb/mongodb-original.svg",
+    description: "Experienced in writing scalable and type-safe code.",
+  },
+  {
+    name: "mongodb",
+    image:
+      "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mysql/mysql-original.svg",
     description: "Experienced in writing scalable and type-safe code.",
   },
 ];
@@ -37,7 +70,7 @@ const SkillsSection: React.FC = () => {
           {skills.map((skill) => (
             <div
               key={skill.name}
-              className="group transform rounded-lg bg-gray-200 p-6 text-center transition-transform duration-300 hover:translate-y-[-10px] hover:shadow-[0px_4px_15px_4px_rgba(106,17,203,0.8)] dark:bg-[#1e1e1e]"
+              className="group transform rounded-lg bg-gray-100 p-6 text-center shadow-2xl transition-transform duration-300 hover:translate-y-[-10px] hover:shadow-[0px_4px_15px_4px_rgba(106,17,203,0.8)] dark:bg-[#1e1e1e]"
             >
               <img
                 src={skill.image}
