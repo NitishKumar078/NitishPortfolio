@@ -7,7 +7,3 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-* .dark {
-  cursor: url("./assets/cursor-light.png"), auto;
-}

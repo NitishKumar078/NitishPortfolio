@@ -1,5 +1,9 @@
 import { ProjectCard } from "./ProjectCard";
 import invoice from "../assets/invoice.png";
+import spy from "../assets/spy.png";
+import TextExt from "../assets/TextExt.png";
+import AudioProcessing from "../assets/AudioProcessing.png";
+import pathfinder from "../assets/pathfinder.png";
 
 const projects = [
   {
@@ -8,33 +12,31 @@ const projects = [
       "A responsive web application built with React and Tailwind CSS featuring smooth Exprience and a user-friendly interface to generate and manage invoices.",
     technologies: ["React", "TypeScript", "Tailwind CSS", "Tauri", "Rust"],
     imageUrl: invoice,
-    liveUrl: "https://your-portfolio.com",
     githubUrl: "https://github.com/NitishKumar078/Invoice-Book",
+  },
+  {
+    title: "Spy",
+    description:
+      "Capture real-time images and monitor keyboard and mouse actions for specific windows on a PC.",
+    technologies: [".Net", "C#", "UIAutomation", "WPF"],
+    imageUrl: spy,
+    githubUrl: "https://github.com/NitishKumar078/Spy",
   },
   {
     title: "Path_finder",
     description:
       "Implemented and demonstrated the functionality of five distinct path-finding algorithms, including BFS, DFS, Dijkstra's, A*, and Greedy algorithms.",
     technologies: ["js", "TypeScript", "Prisma", "tRPC"],
-    imageUrl: "/project-2.jpg",
+    imageUrl: pathfinder,
     liveUrl: "https://nitishkumar078.github.io/Path_finder/",
     githubUrl: "https://github.com/NitishKumar078/Path_finder",
   },
-  {
-    title: "YTTabMaster",
-    description:
-      "Seamlessly manage your YouTube experience. This extension automatically pauses and plays videos when you switch tabs, Additionally, enjoy the convenience of running YouTube directly in side regless in which page you are.",
-    technologies: ["React", "Chrome Extension", "Chrome api"],
-    imageUrl: "/project-3.jpg",
-    githubUrl: "https://github.com/NitishKumar078/YTTabMaster",
-  },
-  ,
   {
     title: "Text-Extractor",
     description:
       "This is a web_Extensions which help to scrape the text for the selected html element in the browser.",
     technologies: ["React", "Chrome Extension", "Chrome api"],
-    imageUrl: "/project-3.jpg",
+    imageUrl: TextExt,
     githubUrl: "https://github.com/NitishKumar078/Text-Extractor",
   },
   ,
@@ -43,7 +45,7 @@ const projects = [
     description:
       "Audio Extraction from given video and processing it to transcript(speech to text)",
     technologies: ["python", "thinter"],
-    imageUrl: "/project-3.jpg",
+    imageUrl: AudioProcessing,
     githubUrl: "https://github.com/NitishKumar078/Audio-Processing",
   },
 ];
