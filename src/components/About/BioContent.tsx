@@ -1,6 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import GradualSpacing from "../ui/gradual-spacing";
+import resume from "@/assets/nishkumar562@gmail.pdf";
 
 export const BioContent: React.FC = () => {
   return (
@@ -29,8 +30,9 @@ export const BioContent: React.FC = () => {
       {/* Call-to-Action Button */}
       <div className="mt-6 flex justify-center md:justify-start">
         <a
-          href="/resume.pdf"
+          href={resume}
           className="transform rounded-lg bg-gradient-to-tr from-[#6a11cb] to-[#2575fc] px-6 py-3 font-medium text-white shadow-md transition-transform hover:scale-105"
+          download={resume}
         >
           Download Resume
         </a>
