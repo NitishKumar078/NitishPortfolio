@@ -33,10 +33,10 @@ const Greeting: React.FC<GreetingProps> = ({ projectsRef, contactRef }) => {
           <p className="mb-4 text-lg text-gray-800 dark:text-zinc-200">
             Welcome, it's a{" "}
             <span
-              className="font-semibold text-purple-400"
+              className="text-3xl font-semibold text-purple-400"
               id="dynamic-greeting"
             >
-              beautiful <span className="text-3xl">{getGreeting()}!</span>
+              Beautiful <span className="text-4xl">{getGreeting()}!</span>
             </span>
           </p>
           <h1 className="mb-4 text-4xl font-bold text-gray-800 dark:text-zinc-200 sm:text-3xl">

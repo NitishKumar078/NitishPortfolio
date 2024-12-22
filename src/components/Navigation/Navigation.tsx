@@ -17,7 +17,7 @@ export const Navigation = ({ navRefs }: NavigationProps) => {
   const links = [
     { name: "About", ref: navRefs.aboutRef, key: "aboutRef" },
     { name: "Projects", ref: navRefs.projectsRef, key: "projectsRef" },
-    { name: "Skills", ref: navRefs.skillsRef, key: "skillsRef" },
+    // { name: "Tools/Frameworks", ref: navRefs.skillsRef, key: "skillsRef" },
     { name: "Contact", ref: navRefs.contactRef, key: "contactRef" },
   ];
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);

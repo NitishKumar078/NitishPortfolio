@@ -76,7 +76,7 @@ export function TracingBeamDemo() {
               <div className="prose prose-sm dark:prose-invert mb-8">
                 <BlurIn
                   word={item.description}
-                  className="text-base text-zinc-800 dark:text-zinc-100 md:text-lg"
+                  className="text-base font-medium text-zinc-800 dark:text-zinc-100 md:text-lg"
                   variant={{
                     hidden: { filter: "blur(10px)", opacity: 0 },
                     visible: { filter: "blur(0px)", opacity: 1 },

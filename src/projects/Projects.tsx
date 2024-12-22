@@ -5,7 +5,7 @@ const Projects = () => {
     <div>
       <h2 className="mb-12 text-center text-3xl font-bold sm:text-4xl">
         <span className="bg-gradient-to-tr from-[#8c48d4] to-[#2575fc] bg-clip-text text-transparent">
-          Project's
+          Few Project's
         </span>
       </h2>
       <ProjectsGrid />

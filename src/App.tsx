@@ -10,7 +10,7 @@ import { useTheme } from "@/hooks/useTheme";
 // Lazy loaded components
 const Projects = lazy(() => import("@/projects/Projects"));
 const AboutSection = lazy(() => import("./components/About/AboutSection"));
-const SkillsSection = lazy(() => import("./components/Skills/Skills"));
+// const SkillsSection = lazy(() => import("./components/Skills/Skills"));
 
 const App = () => {
   useTheme();
@@ -84,11 +84,11 @@ const App = () => {
                 </section>
               </Suspense>
 
-              <Suspense fallback={<div>Loading Skills...</div>}>
+              {/* <Suspense fallback={<div>Loading Tools/Framework...</div>}>
                 <section ref={skillsRef} className="py-5">
                   <SkillsSection />
                 </section>
-              </Suspense>
+              </Suspense> */}
 
               <section ref={contactRef} className="py-5">
                 <ContactSection />

@@ -15,7 +15,7 @@ export const MobileMenu = ({ isOpen, onClose, navRefs }: MobileMenuProps) => {
   const links = [
     { name: "About", ref: navRefs.aboutRef, key: "aboutRef" },
     { name: "Projects", ref: navRefs.projectsRef, key: "projectsRef" },
-    { name: "Skills", ref: navRefs.skillsRef, key: "skillsRef" },
+    // { name: "Tools/Frameworks", ref: navRefs.skillsRef, key: "skillsRef" },
     { name: "Contact", ref: navRefs.contactRef, key: "contactRef" },
   ];
 
