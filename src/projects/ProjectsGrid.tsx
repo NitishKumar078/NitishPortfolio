@@ -7,6 +7,7 @@ import pathfinder from "../assets/pathfinder.png";
 
 const projects = [
   {
+    key: "Invoice",
     title: "Invoice-Book",
     description:
       "A responsive web application built with React and Tailwind CSS featuring smooth Exprience and a user-friendly interface to generate and manage invoices.",
@@ -15,6 +16,7 @@ const projects = [
     githubUrl: "https://github.com/NitishKumar078/Invoice-Book",
   },
   {
+    key: "Spy",
     title: "Spy",
     description:
       "Capture real-time images and monitor keyboard and mouse actions for specific windows on a PC.",
@@ -23,6 +25,7 @@ const projects = [
     githubUrl: "https://github.com/NitishKumar078/Spy",
   },
   {
+    key: "path_finder",
     title: "Path_finder",
     description:
       "Implemented and demonstrated the functionality of five distinct path-finding algorithms, including BFS, DFS, Dijkstra's, A*, and Greedy algorithms.",
@@ -32,6 +35,7 @@ const projects = [
     githubUrl: "https://github.com/NitishKumar078/Path_finder",
   },
   {
+    key: "text_extractor",
     title: "Text-Extractor",
     description:
       "This is a web_Extensions which help to scrape the text for the selected html element in the browser.",
@@ -39,8 +43,8 @@ const projects = [
     imageUrl: TextExt,
     githubUrl: "https://github.com/NitishKumar078/Text-Extractor",
   },
-  ,
   {
+    key: "audio_processing",
     title: "Audio-Processing",
     description:
       "Audio Extraction from given video and processing it to transcript(speech to text)",
@@ -55,6 +59,7 @@ const ProjectsGrid = () => {
     <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
       {projects.map((project) => (
         <ProjectCard
+          key={project.key}
           title={project?.title || "Project Title"}
           description={project?.description || "Project Description"}
           technologies={project?.technologies || []}

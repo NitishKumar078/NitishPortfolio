@@ -46,7 +46,7 @@ export const MobileMenu = ({ isOpen, onClose, navRefs }: MobileMenuProps) => {
             animate={{ x: 0 }}
             exit={{ x: "100%" }}
             transition={{ type: "spring", damping: 25, stiffness: 200 }}
-            className="fixed right-0 top-0 flex h-auto w-full overflow-visible overflow-y-auto bg-white p-6 shadow-lg dark:bg-zinc-900"
+            className="fixed right-0 top-0 z-10 flex h-auto w-full overflow-visible overflow-y-auto bg-white p-6 shadow-lg dark:bg-zinc-900"
             id="mobile-menu"
             role="dialog"
             aria-modal="true"
