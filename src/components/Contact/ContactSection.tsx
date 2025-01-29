@@ -2,14 +2,14 @@ import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { Github, Linkedin, Mail } from "lucide-react";
 import emailjs from "emailjs-com";
-import msgsent from "@/assets/message_sent.mp4";
+import msgsent from "@/assets/message_sent.gif";
 const _SERVICE_ID = import.meta.env.VITE_SERVICE_ID;
 const _TEMPLATE_ID = import.meta.env.VITE_TEMPLATE_ID;
 const _PUBLIC_ID = import.meta.env.VITE_PUBLIC_ID;
 
 export const ContactSection = () => {
   const [isSending, setIsSending] = useState(false);
-  const [messageSent, setMessageSent] = useState(false);
+  const [messageSent, setMessageSent] = useState(true);
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -26,13 +26,13 @@ export const ContactSection = () => {
     {
       icon: <Linkedin className="h-6 w-6" />,
       label: "LinkedIn",
-      href: "/",
+      href: "https://www.linkedin.com/in/nitish-kumar-m/",
       color: "hover:text-blue-500",
     },
     {
       icon: <Github className="h-6 w-6" />,
       label: "GitHub",
-      href: "https://github.com/yourusername",
+      href: "https://github.com/NitishKumar078",
       color: "hover:text-gray-500",
     },
   ];
@@ -113,7 +113,7 @@ export const ContactSection = () => {
               src={msgsent}
               autoPlay
               muted
-              className="h-auto w-64 rounded-lg shadow-md"
+              className="h-auto w-64 rounded-lg bg-white shadow-md dark:bg-zinc-800/50"
             ></video>
           </div>
         ) : (
