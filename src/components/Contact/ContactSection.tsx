@@ -1,15 +1,16 @@
 import React, { useState } from "react";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import { Github, Linkedin, Mail } from "lucide-react";
 import emailjs from "emailjs-com";
-import msgsent from "@/assets/message_sent.mp4";
+import { Confetti } from "@/components/ui/Confetti"; // You'll need to create this component
+
 const _SERVICE_ID = import.meta.env.VITE_SERVICE_ID;
 const _TEMPLATE_ID = import.meta.env.VITE_TEMPLATE_ID;
 const _PUBLIC_ID = import.meta.env.VITE_PUBLIC_ID;
 
 export const ContactSection = () => {
   const [isSending, setIsSending] = useState(false);
-  const [messageSent, setMessageSent] = useState(true);
+  const [messageSent, setMessageSent] = useState(false);
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -48,24 +49,17 @@ export const ContactSection = () => {
     e.preventDefault();
     setIsSending(true);
 
-    emailjs
-      .send(
-        _SERVICE_ID, // Replace with your EmailJS Service ID
-        _TEMPLATE_ID, // Replace with your EmailJS Template ID
-        formData,
-        _PUBLIC_ID, // Replace with your EmailJS User ID
-      )
-      .then(
-        () => {
-          setIsSending(false);
-          setMessageSent(true);
-          setFormData({ name: "", email: "", message: "" }); // Clear the form
-        },
-        () => {
-          setIsSending(false);
-          alert("Failed to send the message. Please try again.");
-        },
-      );
+    emailjs.send(_SERVICE_ID, _TEMPLATE_ID, formData, _PUBLIC_ID).then(
+      () => {
+        setIsSending(false);
+        setMessageSent(true);
+        setFormData({ name: "", email: "", message: "" });
+      },
+      () => {
+        setIsSending(false);
+        alert("Failed to send the message. Please try again.");
+      },
+    );
   };
 
   return (
@@ -105,17 +99,49 @@ export const ContactSection = () => {
         className="rounded-xl bg-white p-8 shadow-lg dark:bg-zinc-800/50"
       >
         {messageSent ? (
-          <div className="flex flex-col items-center space-y-4">
-            <p className="text-center text-lg font-semibold text-green-500">
-              Message sent successfully!
-            </p>
-            <video
-              src={msgsent}
-              autoPlay
-              muted
-              className="h-auto w-64 rounded-lg bg-white shadow-md dark:bg-zinc-800/50"
-            ></video>
-          </div>
+          <AnimatePresence>
+            <motion.div
+              initial={{ scale: 0.5, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              exit={{ scale: 0.5, opacity: 0 }}
+              className="flex flex-col items-center space-y-4"
+            >
+              <Confetti /> {/* Add your confetti component here */}
+              <div className="relative">
+                <motion.svg
+                  initial={{ scale: 0 }}
+                  animate={{ scale: 1 }}
+                  className="h-24 w-24 text-green-500"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <motion.path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
+                    initial={{ pathLength: 0 }}
+                    animate={{ pathLength: 1 }}
+                    transition={{ duration: 0.5 }}
+                  />
+                </motion.svg>
+              </div>
+              <motion.div
+                initial={{ y: 20, opacity: 0 }}
+                animate={{ y: 0, opacity: 1 }}
+                transition={{ delay: 0.3 }}
+                className="text-center"
+              >
+                <h3 className="text-2xl font-semibold text-zinc-800 dark:text-zinc-100">
+                  Message Sent!
+                </h3>
+                <p className="mt-2 text-zinc-600 dark:text-zinc-400">
+                  I'll get back to you within 24 hours
+                </p>
+              </motion.div>
+            </motion.div>
+          </AnimatePresence>
         ) : (
           <form className="space-y-4" onSubmit={handleSubmit}>
             <div>
@@ -166,13 +192,26 @@ export const ContactSection = () => {
                 className="mt-1 block w-full rounded-md border border-zinc-300 bg-white px-4 py-2 text-zinc-900 shadow-sm focus:border-purple-500 focus:outline-none focus:ring-2 focus:ring-purple-500/50 dark:border-zinc-600 dark:bg-zinc-900 dark:text-white"
               ></textarea>
             </div>
-            <button
+            <motion.button
+              whileHover={{ scale: 1.02 }}
+              whileTap={{ scale: 0.98 }}
               type="submit"
-              className="hover:cursor-hand w-full rounded-md bg-gradient-to-tr from-[#6a11cb] to-[#2575fc] px-4 py-2 text-white shadow-lg transition-all duration-300 hover:bg-gradient-to-tr hover:from-[#2575fc] hover:to-[#6a11cb] focus:outline-none focus:ring-2 focus:ring-purple-500/50 focus:ring-offset-2"
+              className="w-full rounded-md bg-gradient-to-tr from-[#6a11cb] to-[#2575fc] px-4 py-2 text-white shadow-lg transition-all duration-300 hover:bg-gradient-to-tr hover:from-[#2575fc] hover:to-[#6a11cb] focus:outline-none focus:ring-2 focus:ring-purple-500/50 focus:ring-offset-2"
               disabled={isSending}
             >
-              {isSending ? "Sending..." : "Send Message"}
-            </button>
+              {isSending ? (
+                <motion.span
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  className="inline-flex items-center gap-2"
+                >
+                  <span className="h-4 w-4 animate-spin rounded-full border-2 border-white border-t-transparent"></span>
+                  Sending...
+                </motion.span>
+              ) : (
+                "Send Message"
+              )}
+            </motion.button>
           </form>
         )}
       </motion.div>
