@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { Github, Linkedin, Mail } from "lucide-react";
 import emailjs from "emailjs-com";
-import msgsent from "@/assets/message_sent.gif";
+import msgsent from "@/assets/message_sent.mp4";
 const _SERVICE_ID = import.meta.env.VITE_SERVICE_ID;
 const _TEMPLATE_ID = import.meta.env.VITE_TEMPLATE_ID;
 const _PUBLIC_ID = import.meta.env.VITE_PUBLIC_ID;
