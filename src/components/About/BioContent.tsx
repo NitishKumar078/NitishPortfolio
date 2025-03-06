@@ -18,7 +18,7 @@ export const BioContent: React.FC = () => {
       />
 
       {/* Description */}
-      <p className="font-sans text-lg font-bold leading-relaxed text-zinc-600 dark:text-zinc-300 md:text-justify">
+      <p className="font-sans leading-relaxed text-zinc-600 dark:text-zinc-300 md:text-justify">
         With a solid foundation in computer science and experience in software
         development, I specialize in building efficient, user-centric solutions
         using technologies like Python, C#, Java, React.js, and Electron. I am
