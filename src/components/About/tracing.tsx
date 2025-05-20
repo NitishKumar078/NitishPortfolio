@@ -5,12 +5,13 @@ import { BoxReveal } from "../ui/box-reveal";
 import Reading from "@/assets/learning-animate.svg";
 import Work from "@/assets/working-animate.svg";
 
+// .
 const dummyContent = [
   {
     title: "Work Experience",
     badge: "Work",
     description:
-      "I design intuitive user interfaces and frontend components to automate repetitive tasks, develop real-time monitoring tools, and enhance user workflows through innovative technologies.",
+      "Inventys Technologies PVT LTD is focused on building cutting-edge Robotic Process Automation (RPA) products that help organizations automate repetitive business processes. As a contributor, I help develop solutions that streamline workflows and boost productivity through innovative automation technologies",
     image: Work,
     className: "sm:flex-row-reverse pt-5 flex-col-reverse",
     section: [
@@ -20,13 +21,14 @@ const dummyContent = [
         location: "Karnataka, India",
         date: "2023 - Present",
         description:
-          "Leading development of innovation and mangament for web to autimated user actions",
+          "Major contributor in developing and enhancing core features for RPA products, focusing on automation and user workflow optimization.",
         technologies: ["React", "Chrome Extension", "Python", ".Net", "C#"],
         achievements: [
-          "Automated repetitive processes to enhance efficiency and sustainability.",
-          "Developed a Chrome extension for DOM capture, improving workflow and user experience.",
-          'Contributed to "Fusion," a desktop app integrating and visualizing captured content using React and Electron.',
-          "Designed a versatile WPF application for real-time monitoring of keyboard and mouse actions.",
+          "Designed and implemented subcomponents in React for introspection within major application modules, improving maintainability and extensibility.",
+          "Learned and utilized C# to monitor and automate user actions at the Windows OS level, gaining deep understanding of system internals.",
+          "Developed and extended Chrome extensions to capture user activity, including visited pages and interactions, enabling advanced automation and analytics.",
+          "Actively fixed bugs, added new features, and played a key role in project architecture and delivery.",
+          "Recognized for taking initiative and leading efforts in building and shipping critical features for the RPA platform.",
         ],
       },
     ],
