@@ -9,7 +9,7 @@ const AboutSection: React.FC = () => {
         <h2 className="mb-12 text-center text-3xl">
           <span className="font-bold text-purple-500 sm:text-4xl">
             WHO I'M <span>& </span>
-            <span className="bg-clip-text text-white">WHAT I Do</span>
+            <span className="bg-clip-text dark:text-white text-zinc-600">WHAT I Do</span>
           </span>
         </h2>
 
