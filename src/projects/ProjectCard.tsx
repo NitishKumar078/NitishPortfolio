@@ -22,7 +22,7 @@ export const ProjectCard = ({
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5 }}
-      className="group relative overflow-hidden rounded-lg bg-white p-6 shadow-lg transition-all hover:shadow-xl dark:bg-zinc-800/50"
+      className="group relative overflow-hidden rounded-lg bg-transparent shadow-lg transition-all hover:shadow-xl"
     >
       <div className="relative aspect-video overflow-hidden rounded-lg">
         <img
@@ -61,7 +61,7 @@ export const ProjectCard = ({
             >
               Live Demo
               <svg
-                className="h-8 w-8 rotate-45 justify-end rounded-full border border-gray-700 p-2 text-gray-50 duration-300 ease-linear group-hover:rotate-90 group-hover:border-none group-hover:bg-gray-50"
+                className="h-8 w-8 rotate-90 justify-end rounded-full border border-gray-700 p-2 text-gray-50 duration-300 ease-linear group-hover:rotate-45 group-hover:border-none group-hover:bg-gray-50"
                 viewBox="0 0 16 19"
                 xmlns="http://www.w3.org/2000/svg"
               >

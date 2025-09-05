@@ -4,6 +4,11 @@ export default {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
     extend: {
+      boxShadow: {
+        soft: "0 1px 2px 0 rgba(0,0,0,0.04), 0 8px 24px -8px rgba(0,0,0,0.12)",
+        elevated:
+          "0 2px 6px rgba(0,0,0,0.06), 0 16px 32px -12px rgba(0,0,0,0.18)",
+      },
       keyframes: {
         marquee: {
           from: {
@@ -48,6 +53,20 @@ export default {
         float: "float 4s ease-in-out infinite",
       },
       fontFamily: {
+        sans: [
+          "Inter",
+          "Plus Jakarta Sans",
+          "ui-sans-serif",
+          "system-ui",
+          "-apple-system",
+          "Segoe UI",
+          "Roboto",
+          "Helvetica",
+          "Arial",
+          "Noto Sans",
+          "sans-serif",
+        ],
+        heading: ["Plus Jakarta Sans", "Inter", "ui-sans-serif", "system-ui"],
         Chakra_Petch: ["Chakra Petch", "sans-serif"],
         Permanent_Marker: ["Permanent Marker", "cursive"],
         Protest_Revolution: ["Protest Revolution", "sans-serif"],
@@ -55,8 +74,10 @@ export default {
         Righteous: ["Righteous", "cursive"],
       },
       backgroundImage: {
-        "dotted-pattern": "radial-gradient(#333 1px, transparent 1px)",
-        "dotted-pattern-light": "radial-gradient(#ddd 1px, transparent 1px)",
+        "dotted-pattern":
+          "radial-gradient(var(--dot-color) 1px, transparent 1px)",
+        "dotted-pattern-light":
+          "radial-gradient(var(--dot-color-light) 1px, transparent 1px)",
       },
       backgroundSize: {
         15: "15px 15px",

@@ -44,8 +44,28 @@ const App = () => {
   };
 
   return (
-    <div className="dark:text-white">
-      <div className="fixed inset-0 -z-10 bg-dotted-pattern-light bg-15 dark:bg-dotted-pattern" />
+    <div className="relative bg-background text-foreground">
+      {/* Background Wrapper */}
+      <div className="fixed inset-0 min-h-screen w-full">
+        {/* Light Theme Background */}
+        <div
+          className="absolute inset-0 z-0 dark:hidden"
+          style={{
+            background:
+              "radial-gradient(125% 125% at 50% 10%, #fff 40%, #7c3aed 100%)",
+          }}
+        />
+
+        {/* Dark Theme Background */}
+        <div
+          className="absolute inset-0 z-0 hidden dark:block"
+          style={{
+            backgroundImage:
+              "radial-gradient(circle 500px at 50% 200px, #3e3e3e, transparent)",
+            backgroundColor: "#020617",
+          }}
+        />
+      </div>
 
       <AnimatePresence mode="wait">
         {isLoading ? (
@@ -64,7 +84,7 @@ const App = () => {
             className="relative mx-auto max-w-7xl px-4"
           >
             <Navigation navRefs={navRefs} />
-            <main>
+            <main className="pt-20">
               <section className="flex min-h-[80vh] items-center justify-center">
                 <Greeting projectsRef={projectsRef} contactRef={contactRef} />
               </section>

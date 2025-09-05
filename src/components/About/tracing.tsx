@@ -63,7 +63,7 @@ const dummyContent = [
 
 export function TracingBeamDemo() {
   return (
-    <div className="relative mx-auto mt-8 max-w-6xl rounded-xl bg-gray-100 p-4 tracking-wide text-zinc-900/80 shadow-2xl dark:bg-zinc-900/80 dark:text-zinc-100 md:p-8">
+    <div className="relative mx-auto mt-8 max-w-6xl rounded-xl bg-transparent p-4 tracking-wide text-zinc-900/80 shadow-2xl dark:bg-transparent dark:text-zinc-100 md:p-8">
       <TracingBeam>
         <div className="mx-auto max-w-4xl">
           {dummyContent.map((item, index) => (

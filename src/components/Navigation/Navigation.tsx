@@ -63,7 +63,7 @@ export const Navigation = ({ navRefs }: NavigationProps) => {
   }, [links]);
 
   return (
-    <header className="fixed left-0 right-0 top-0 z-50 border-b border-zinc-200 bg-white/80 backdrop-blur-md dark:border-zinc-800 dark:bg-zinc-900/80">
+    <header className="bg-background-[#0f121f24] fixed left-0 right-0 top-0 z-50 border-b border-border/60 backdrop-blur-md">
       <div className="mx-auto flex h-16 items-center justify-between px-4 sm:px-6 lg:px-8">
         <Logo />
 
@@ -76,17 +76,17 @@ export const Navigation = ({ navRefs }: NavigationProps) => {
             <button
               key={link.key}
               onClick={() => handleScrollToSection(link.ref, link.key)}
-              className={`relative px-3 py-2 text-sm font-medium ${
+              className={`relative px-3 py-2 text-sm font-medium transition-colors ${
                 activeSection === link.key
-                  ? "text-purple-600 dark:text-purple-400"
-                  : "text-zinc-700 hover:text-purple-600 dark:text-zinc-300 dark:hover:text-purple-400"
+                  ? "text-primary"
+                  : "text-muted-foreground hover:text-foreground"
               }`}
             >
               {link.name}
               {activeSection === link.key && (
                 <motion.div
                   layoutId="activeSectionDesktop"
-                  className="absolute inset-x-0 -bottom-px h-0.5 bg-purple-600 dark:bg-purple-400"
+                  className="absolute inset-x-0 -bottom-px h-0.5 bg-primary"
                   transition={{ type: "spring", stiffness: 380, damping: 30 }}
                 />
               )}
@@ -99,7 +99,7 @@ export const Navigation = ({ navRefs }: NavigationProps) => {
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
           onClick={() => setIsMobileMenuOpen(true)}
-          className="rounded-lg p-2 text-zinc-500 hover:bg-zinc-100 hover:text-zinc-700 dark:text-zinc-400 dark:hover:bg-zinc-800 dark:hover:text-zinc-200 md:hidden"
+          className="rounded-lg p-2 text-muted-foreground hover:bg-muted hover:text-foreground md:hidden"
           aria-label="Open menu"
         >
           <svg
