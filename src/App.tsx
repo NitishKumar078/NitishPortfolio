@@ -52,7 +52,7 @@ const App = () => {
           className="absolute inset-0 z-0 dark:hidden"
           style={{
             background:
-              "radial-gradient(125% 125% at 50% 10%, #fff 40%, #7c3aed 100%)",
+              "radial-gradient(125% 125% at 50% 10%, #fff 40%, #b95ddd6e 100%)",
           }}
         />
 
