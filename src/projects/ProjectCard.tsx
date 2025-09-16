@@ -32,7 +32,7 @@ export const ProjectCard = ({
         />
       </div>
 
-      <div className="mt-4 space-y-2">
+      <div className="mt-4 space-y-2 px-2 pb-4">
         <h3 className="text-xl font-bold text-zinc-900 dark:text-white">
           {title}
         </h3>
