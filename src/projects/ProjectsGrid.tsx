@@ -4,6 +4,7 @@ import spy from "../assets/spy.png";
 import TextExt from "../assets/TextExt.png";
 import AudioProcessing from "../assets/AudioProcessing.png";
 import pathfinder from "../assets/pathfinder.png";
+import favicon from "../assets/faviconExt.png";
 
 const projects = [
   {
@@ -14,6 +15,16 @@ const projects = [
     technologies: ["React", "TypeScript", "Tailwind CSS", "Tauri", "Rust"],
     imageUrl: invoice,
     githubUrl: "https://github.com/NitishKumar078/Invoice-Book",
+  },
+  {
+    key: "Favicon-extractor",
+    title: "Favicon-extractor",
+    description:
+      "Lightweight Node.js utility for backend use, fetching and extracting favicons from any website URL. Ideal for server-side apps, APIs, and services needing quick access to site icons.",
+    technologies: ["Node", "Favicon", "axios", "TypeScript"],
+    imageUrl: favicon,
+    liveUrl: "https://favicon-extractor.vercel.app/",
+    githubUrl: "https://github.com/NitishKumar078/favicon-extractor",
   },
   {
     key: "Spy",
