@@ -15,6 +15,7 @@ const projects = [
     technologies: ["React", "TypeScript", "Tailwind CSS", "Tauri", "Rust"],
     imageUrl: invoice,
     githubUrl: "https://github.com/NitishKumar078/Invoice-Book",
+    liveUrl: "https://invoice-book.vercel.app/",
   },
   {
     key: "Favicon-extractor",
