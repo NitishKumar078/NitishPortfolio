@@ -51,6 +51,8 @@ export default {
         slideUp: "slideUp 1.5s ease-out forwards",
         bounce: "bounce 2s infinite",
         float: "float 4s ease-in-out infinite",
+        "spin-slow": "spin 8s linear infinite",
+        "spin-reverse-slow": "spin 8s linear infinite reverse",
       },
       fontFamily: {
         sans: [
@@ -67,11 +69,6 @@ export default {
           "sans-serif",
         ],
         heading: ["Plus Jakarta Sans", "Inter", "ui-sans-serif", "system-ui"],
-        Chakra_Petch: ["Chakra Petch", "sans-serif"],
-        Permanent_Marker: ["Permanent Marker", "cursive"],
-        Protest_Revolution: ["Protest Revolution", "sans-serif"],
-        Rubik_Marker_Hatch: ["Rubik Marker Hatch", "sans-serif"],
-        Righteous: ["Righteous", "cursive"],
       },
       backgroundImage: {
         "dotted-pattern":

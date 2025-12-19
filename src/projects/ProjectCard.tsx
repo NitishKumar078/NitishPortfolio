@@ -22,7 +22,7 @@ export const ProjectCard = ({
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5 }}
-      className="group relative overflow-hidden rounded-lg bg-transparent shadow-lg transition-all hover:shadow-xl"
+      className="group relative overflow-hidden rounded-xl bg-card border border-border shadow-soft transition-all hover:shadow-elevated hover:-translate-y-1"
     >
       <div className="relative aspect-video overflow-hidden rounded-lg">
         <img
@@ -32,11 +32,11 @@ export const ProjectCard = ({
         />
       </div>
 
-      <div className="mt-4 space-y-2 px-2 pb-4">
-        <h3 className="text-xl font-bold text-zinc-900 dark:text-white">
+      <div className="mt-4 space-y-2 p-4">
+        <h3 className="text-xl font-bold text-foreground">
           {title}
         </h3>
-        <p className="text-sm text-zinc-600 dark:text-zinc-300">
+        <p className="text-sm text-muted-foreground leading-relaxed">
           {description}
         </p>
 
@@ -44,7 +44,7 @@ export const ProjectCard = ({
           {technologies.map((tech, index: number) => (
             <span
               key={index}
-              className="rounded-full bg-purple-100 px-3 py-1 text-xs font-medium text-purple-600 dark:bg-purple-900/30 dark:text-purple-300"
+              className="rounded-full bg-primary/10 px-3 py-1 text-xs font-medium text-primary dark:bg-primary/20 dark:text-primary-foreground"
             >
               {tech}
             </span>
@@ -57,18 +57,22 @@ export const ProjectCard = ({
               href={liveUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 text-sm font-medium text-purple-600 hover:text-purple-700 dark:text-purple-400 dark:hover:text-purple-300"
+              className="inline-flex items-center gap-2 text-sm font-medium text-primary hover:text-primary/80 dark:text-primary-foreground dark:hover:text-primary-foreground/80 transition-colors"
+              aria-label={`View live demo of ${title}`}
             >
               Live Demo
               <svg
-                className="h-8 w-8 rotate-90 justify-end rounded-full border border-gray-700 p-2 text-gray-50 duration-300 ease-linear group-hover:rotate-45 group-hover:border-none group-hover:bg-gray-50"
-                viewBox="0 0 16 19"
-                xmlns="http://www.w3.org/2000/svg"
+                className="h-4 w-4 transition-transform group-hover:translate-x-1"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
               >
                 <path
-                  d="M7 18C7 18.5523 7.44772 19 8 19C8.55228 19 9 18.5523 9 18H7ZM8.70711 0.292893C8.31658 -0.0976311 7.68342 -0.0976311 7.29289 0.292893L0.928932 6.65685C0.538408 7.04738 0.538408 7.68054 0.928932 8.07107C1.31946 8.46159 1.95262 8.46159 2.34315 8.07107L8 2.41421L13.6569 8.07107C14.0474 8.46159 14.6805 8.46159 15.0711 8.07107C15.4616 7.68054 15.4616 7.04738 15.0711 6.65685L8.70711 0.292893ZM9 18L9 1H7L7 18H9Z"
-                  className="fill-gray-800 group-hover:fill-gray-800"
-                ></path>
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
+                />
               </svg>
             </a>
           )}
@@ -77,7 +81,8 @@ export const ProjectCard = ({
             href={githubUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 text-sm font-medium text-zinc-600 hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-zinc-100"
+            className="inline-flex items-center gap-2 text-sm font-medium text-muted-foreground hover:text-foreground dark:text-muted-foreground dark:hover:text-foreground transition-colors"
+            aria-label={`View source code for ${title}`}
           >
             View Code
             <svg className="h-4 w-4" viewBox="0 0 20 20" fill="currentColor">

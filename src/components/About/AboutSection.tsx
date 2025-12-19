@@ -6,10 +6,10 @@ const AboutSection: React.FC = () => {
   return (
     <section id="about">
       <div className="container mx-auto px-4">
-        <h2 className="mb-12 text-center text-3xl">
-          <span className="font-bold text-purple-500 sm:text-4xl">
+        <h2 className="mb-12 text-center text-3xl font-bold sm:text-4xl">
+          <span className="text-primary">
             WHO I'M <span>& </span>
-            <span className="bg-clip-text dark:text-white text-zinc-600">WHAT I Do</span>
+            <span className="text-foreground">WHAT I Do</span>
           </span>
         </h2>
 

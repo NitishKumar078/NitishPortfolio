@@ -9,7 +9,7 @@ export const Logo = () => {
     >
       <a
         href="/"
-        className="bg-gradient-to-r from-purple-500 to-pink-600 bg-clip-text text-2xl font-bold text-transparent"
+        className="bg-gradient-to-r from-primary to-accent bg-clip-text text-2xl font-bold text-transparent"
       >
         NKM
       </a>

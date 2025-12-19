@@ -22,19 +22,19 @@ export const ContactSection = () => {
       icon: <Mail className="h-6 w-6" />,
       label: "Email",
       href: "mailto:nishkumar562@gmail.com",
-      color: "hover:text-purple-500",
+      color: "hover:text-primary",
     },
     {
       icon: <Linkedin className="h-6 w-6" />,
       label: "LinkedIn",
       href: "https://www.linkedin.com/in/nitish-kumar-m/",
-      color: "hover:text-blue-500",
+      color: "hover:text-primary",
     },
     {
       icon: <Github className="h-6 w-6" />,
       label: "GitHub",
       href: "https://github.com/NitishKumar078",
-      color: "hover:text-gray-500",
+      color: "hover:text-primary",
     },
   ];
 
@@ -65,7 +65,7 @@ export const ContactSection = () => {
   return (
     <div className="mx-auto max-w-4xl space-y-8 px-4">
       <h2 className="mb-12 text-center text-3xl font-bold sm:text-4xl">
-        <span className="bg-gradient-to-tr from-[#8c48d4] to-[#2575fc] bg-clip-text text-transparent">
+        <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
           Let's Connect
         </span>
       </h2>
@@ -82,10 +82,11 @@ export const ContactSection = () => {
             href={link.href}
             target="_blank"
             rel="noopener noreferrer"
-            className={`flex flex-col items-center gap-2 rounded-xl border border-zinc-200 p-6 transition-all duration-300 hover:scale-105 hover:shadow-lg dark:border-zinc-700 ${link.color}`}
+            className={`flex flex-col items-center gap-2 rounded-xl border border-border bg-card p-6 transition-all duration-300 hover:scale-105 hover:shadow-elevated ${link.color}`}
+            aria-label={`Contact via ${link.label}`}
           >
             {link.icon}
-            <span className="text-sm font-medium text-zinc-600 dark:text-zinc-300">
+            <span className="text-sm font-medium text-muted-foreground">
               {link.label}
             </span>
           </a>
@@ -96,7 +97,7 @@ export const ContactSection = () => {
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.4 }}
-        className="rounded-xl bg-white p-8 shadow-lg dark:bg-zinc-800/50"
+        className="rounded-xl bg-card p-6 shadow-soft border border-border sm:p-8"
       >
         {messageSent ? (
           <AnimatePresence>
@@ -133,10 +134,10 @@ export const ContactSection = () => {
                 transition={{ delay: 0.3 }}
                 className="text-center"
               >
-                <h3 className="text-2xl font-semibold text-zinc-800 dark:text-zinc-100">
+                <h3 className="text-2xl font-semibold text-foreground">
                   Message Sent!
                 </h3>
-                <p className="mt-2 text-zinc-600 dark:text-zinc-400">
+                <p className="mt-2 text-muted-foreground">
                   I'll get back to you within 24 hours
                 </p>
               </motion.div>
@@ -147,7 +148,7 @@ export const ContactSection = () => {
             <div>
               <label
                 htmlFor="name"
-                className="block text-sm font-medium text-zinc-700 dark:text-zinc-300"
+                className="block text-sm font-medium text-foreground"
               >
                 Name
               </label>
@@ -157,13 +158,13 @@ export const ContactSection = () => {
                 value={formData.name}
                 onChange={handleInputChange}
                 required
-                className="mt-1 block w-full rounded-md border border-zinc-300 bg-white px-4 py-2 text-zinc-900 shadow-sm focus:border-purple-500 focus:outline-none focus:ring-2 focus:ring-purple-500/50 dark:border-zinc-600 dark:bg-zinc-900 dark:text-white"
+                className="mt-1 block w-full rounded-md border border-border bg-background px-4 py-2 text-foreground shadow-sm focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/50 dark:border-border dark:bg-background dark:text-foreground"
               />
             </div>
             <div>
               <label
                 htmlFor="email"
-                className="block text-sm font-medium text-zinc-700 dark:text-zinc-300"
+                className="block text-sm font-medium text-foreground"
               >
                 Email
               </label>
@@ -173,13 +174,13 @@ export const ContactSection = () => {
                 value={formData.email}
                 onChange={handleInputChange}
                 required
-                className="mt-1 block w-full rounded-md border border-zinc-300 bg-white px-4 py-2 text-zinc-900 shadow-sm focus:border-purple-500 focus:outline-none focus:ring-2 focus:ring-purple-500/50 dark:border-zinc-600 dark:bg-zinc-900 dark:text-white"
+                className="mt-1 block w-full rounded-md border border-border bg-background px-4 py-2 text-foreground shadow-sm focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/50 dark:border-border dark:bg-background dark:text-foreground"
               />
             </div>
             <div>
               <label
                 htmlFor="message"
-                className="block text-sm font-medium text-zinc-700 dark:text-zinc-300"
+                className="block text-sm font-medium text-foreground"
               >
                 Message
               </label>
@@ -189,14 +190,14 @@ export const ContactSection = () => {
                 value={formData.message}
                 onChange={handleInputChange}
                 required
-                className="mt-1 block w-full rounded-md border border-zinc-300 bg-white px-4 py-2 text-zinc-900 shadow-sm focus:border-purple-500 focus:outline-none focus:ring-2 focus:ring-purple-500/50 dark:border-zinc-600 dark:bg-zinc-900 dark:text-white"
+                className="mt-1 block w-full rounded-md border border-border bg-background px-4 py-2 text-foreground shadow-sm focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/50 dark:border-border dark:bg-background dark:text-foreground resize-none"
               ></textarea>
             </div>
             <motion.button
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
               type="submit"
-              className="w-full rounded-md bg-gradient-to-tr from-[#6a11cb] to-[#2575fc] px-4 py-2 text-white shadow-lg transition-all duration-300 hover:bg-gradient-to-tr hover:from-[#2575fc] hover:to-[#6a11cb] focus:outline-none focus:ring-2 focus:ring-purple-500/50 focus:ring-offset-2"
+              className="btn-primary w-full px-4 py-2 font-medium focus:ring-offset-2"
               disabled={isSending}
             >
               {isSending ? (

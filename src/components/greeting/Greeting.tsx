@@ -30,44 +30,44 @@ const Greeting: React.FC<GreetingProps> = ({ projectsRef, contactRef }) => {
       <div className="relative flex h-full flex-col items-center justify-center gap-10 px-6 text-center sm:flex-row sm:px-20 sm:text-left">
         {/* Text Content */}
         <div className="w-full">
-          <p className="mb-4 text-3xl text-muted-foreground">
+          <p className="mb-4 text-2xl text-muted-foreground sm:text-3xl">
             Welcome, it's a{" "}
             <span
-              className="text-3xl font-semibold text-primary"
+              className="font-semibold text-primary"
               id="dynamic-greeting"
             >
-              Beautiful <span className="text-4xl">{getGreeting()}!</span>
+              Beautiful <span className="text-3xl sm:text-4xl">{getGreeting()}!</span>
             </span>
           </p>
-          <h1 className="mb-4 text-4xl font-semibold sm:text-3xl">
+          <h1 className="mb-4 text-3xl font-bold sm:text-4xl lg:text-5xl">
             I’m{" "}
             <TypingAnimation
-              className="inline bg-gradient-to-r from-[hsl(var(--primary))] to-[hsl(var(--accent))] bg-clip-text text-transparent sm:text-5xl"
+              className="inline bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent"
               text="Nitish_kumar M"
               duration={250}
             />
             <br />
             a passionate <br />
-            <span className="bg-gradient-to-r from-[hsl(var(--primary))] to-[hsl(var(--accent))] bg-clip-text text-transparent sm:text-4xl">
+            <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
               Software Developer
             </span>
           </h1>
-          <p className="mb-6 text-lg text-muted-foreground">
+          <p className="mb-6 text-base text-muted-foreground sm:text-lg leading-relaxed">
             I craft innovative web experiences with modern frameworks and
             technologies. Let's create something exceptional.
           </p>
-          <div className="mt-6 flex animate-slideUp flex-row space-x-4">
+          <div className="mt-6 flex animate-slideUp flex-col gap-4 sm:flex-row sm:space-x-4">
             <button
-              id="#contact"
               onClick={() => handleonclick(contactRef)}
-              className="btn-primary px-6 py-3 text-lg"
+              className="btn-primary px-6 py-3 text-base font-medium sm:text-lg"
+              aria-label="Scroll to contact section"
             >
               Get in Touch
             </button>
             <button
-              id="#projects"
               onClick={() => handleonclick(projectsRef)}
-              className="rounded-lg border-2 border-border px-6 py-3 text-lg text-foreground shadow-soft transition-colors hover:bg-muted"
+              className="rounded-lg border border-border bg-background px-6 py-3 text-base font-medium text-foreground shadow-soft transition-all hover:bg-muted hover:shadow-elevated sm:text-lg"
+              aria-label="Scroll to projects section"
             >
               View My Work
             </button>

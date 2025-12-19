@@ -46,7 +46,7 @@ export const MobileMenu = ({ isOpen, onClose, navRefs }: MobileMenuProps) => {
             animate={{ x: 0 }}
             exit={{ x: "100%" }}
             transition={{ type: "spring", damping: 25, stiffness: 200 }}
-            className="fixed right-0 top-0 z-10 flex h-auto w-full overflow-visible overflow-y-auto bg-white p-6 shadow-lg dark:bg-zinc-900"
+            className="fixed right-0 top-0 z-10 flex h-auto w-full overflow-visible overflow-y-auto bg-background p-6 shadow-soft border-l border-border"
             id="mobile-menu"
             role="dialog"
             aria-modal="true"
@@ -55,7 +55,7 @@ export const MobileMenu = ({ isOpen, onClose, navRefs }: MobileMenuProps) => {
             {/* Close Button */}
             <button
               onClick={onClose}
-              className="absolute right-4 top-4 rounded-lg p-2 text-zinc-500 transition-colors hover:bg-zinc-100 hover:text-zinc-700 dark:text-zinc-400 dark:hover:bg-zinc-800 dark:hover:text-zinc-200"
+              className="absolute right-4 top-4 rounded-lg p-2 text-muted-foreground transition-colors hover:bg-muted hover:text-foreground"
               aria-label="Close menu"
             >
               <svg
@@ -81,7 +81,7 @@ export const MobileMenu = ({ isOpen, onClose, navRefs }: MobileMenuProps) => {
                   <li key={link.key}>
                     <button
                       onClick={() => handleScrollToSection(link.ref)}
-                      className="block w-full text-left text-zinc-700 hover:text-purple-600 dark:text-zinc-300 dark:hover:text-purple-400"
+                      className="block w-full text-left text-foreground hover:text-primary transition-colors"
                     >
                       {link.name}
                     </button>

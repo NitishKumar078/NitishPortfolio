@@ -23,7 +23,7 @@ const Loading = () => {
   }, []);
 
   return (
-    <div className="relative flex h-screen w-full items-center justify-center bg-zinc-50 transition-colors duration-300 dark:bg-zinc-900">
+    <div className="relative flex h-screen w-full items-center justify-center bg-background transition-colors duration-300">
       <DottedBackground />
       <TriangleBackground />
       <div className="relative z-10">
