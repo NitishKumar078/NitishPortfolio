@@ -47,6 +47,9 @@ export const metadata: Metadata = {
   },
   robots: { index: true, follow: true },
   metadataBase: new URL("https://www.nishkumar.dev"),
+  icons: {
+    icon: "/logo.png",
+  },
 };
 
 export default function RootLayout({
