@@ -1,5 +1,6 @@
 "use client";
 import { useState } from "react";
+import Link from "next/link";
 
 type FilterType = "all" | "blog" | "thought" | "working-on" | "update";
 
@@ -200,11 +201,13 @@ export default function LogFeed() {
           </article>
         ))}
       </div>
-
       <div className="log-more rv">
         <p className="log-count">
           Showing <em>{visible.length}</em> of <em>{ENTRIES.length}</em> entries
         </p>
+        <Link href="/activities" className="btn btn-line">
+          View all activities ↗
+        </Link>
         <a
           href="https://github.com/NitishKumar078"
           target="_blank"

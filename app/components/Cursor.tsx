@@ -41,7 +41,7 @@ export default function Cursor() {
       ring.classList.remove("on");
     };
     const sel =
-      "a, button, .pcard, .acard, .stat-block, .citem, .stack-pill, .log-entry, .log-filter, .log-read";
+      "a, button, .pcard, .acard, .stat-block, .citem, .stack-pill, .log-entry, .log-filter, .log-read, .gl-filter, .gl-dot, .gl-card, .gl-drawer-close, .gl-drawer-link";
     const els = document.querySelectorAll<HTMLElement>(sel);
     els.forEach((el) => {
       el.addEventListener("mouseenter", add);

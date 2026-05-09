@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import { Bebas_Neue, DM_Sans, DM_Mono } from "next/font/google";
 import "./globals.css";
+import Cursor from "./components/Cursor";
 
 const bebasNeue = Bebas_Neue({
   weight: "400",
@@ -60,7 +61,10 @@ export default function RootLayout({
       lang="en"
       className={`${bebasNeue.variable} ${dmSans.variable} ${dmMono.variable}`}
     >
-      <body>{children}</body>
+      <body>
+        <Cursor />
+        {children}
+      </body>
     </html>
   );
 }
