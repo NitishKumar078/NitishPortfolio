@@ -1,0 +1,11 @@
+.next/
+node_modules/
+public/
+dist/
+build/
+*.lock
+package-lock.json
+.vercel/
+out/
+next-env.d.ts
+repos.json
