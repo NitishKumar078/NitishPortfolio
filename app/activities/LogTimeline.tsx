@@ -146,18 +146,61 @@ function CommitNode({
       {/* The graph column */}
       <div className="gl-graph">
         {/* Continuous vertical track lines */}
-        <div className="gl-track-line" style={{ position: "absolute", left: 0, top: 0, bottom: 0, width: "2px", background: TRACK_META.personal.color, opacity: 0.55 }} />
-        <div className="gl-track-line" style={{ position: "absolute", left: 20, top: 0, bottom: 0, width: "2px", background: TRACK_META.work.color, opacity: 0.2 }} />
-        <div className="gl-track-line" style={{ position: "absolute", left: 40, top: 0, bottom: 0, width: "2px", background: TRACK_META.learn.color, opacity: 0.2 }} />
+        <div
+          className="gl-track-line"
+          style={{
+            position: "absolute",
+            left: 0,
+            top: 0,
+            bottom: 0,
+            width: "2px",
+            background: TRACK_META.personal.color,
+            opacity: 0.55,
+          }}
+        />
+        <div
+          className="gl-track-line"
+          style={{
+            position: "absolute",
+            left: 20,
+            top: 0,
+            bottom: 0,
+            width: "2px",
+            background: TRACK_META.work.color,
+            opacity: 0.2,
+          }}
+        />
+        <div
+          className="gl-track-line"
+          style={{
+            position: "absolute",
+            left: 40,
+            top: 0,
+            bottom: 0,
+            width: "2px",
+            background: TRACK_META.learn.color,
+            opacity: 0.2,
+          }}
+        />
 
         {/* Upper split curve (only if coming from a different track above) */}
         {!isMain && prevTrack !== entry.track && (
-          <svg style={{ position: "absolute", top: 0, left: 0, width: "56px", height: "26px", pointerEvents: "none", zIndex: 1 }}>
-            <path 
-              d={`M ${startX} 0 C ${startX} 13, ${endX} 13, ${endX} 26`} 
-              fill="none" 
-              stroke={meta.color} 
-              strokeWidth="2" 
+          <svg
+            style={{
+              position: "absolute",
+              top: 0,
+              left: 0,
+              width: "56px",
+              height: "26px",
+              pointerEvents: "none",
+              zIndex: 1,
+            }}
+          >
+            <path
+              d={`M ${startX} 0 C ${startX} 13, ${endX} 13, ${endX} 26`}
+              fill="none"
+              stroke={meta.color}
+              strokeWidth="2"
               opacity={0.6}
             />
           </svg>
@@ -165,16 +208,24 @@ function CommitNode({
 
         {/* Lower merge curve (only if going to a different track below) */}
         {!isMain && nextTrack !== entry.track && (
-          <svg 
-            style={{ position: "absolute", top: "26px", left: 0, width: "56px", height: "calc(100% - 26px)", pointerEvents: "none", zIndex: 1 }}
+          <svg
+            style={{
+              position: "absolute",
+              top: "26px",
+              left: 0,
+              width: "56px",
+              height: "calc(100% - 26px)",
+              pointerEvents: "none",
+              zIndex: 1,
+            }}
             preserveAspectRatio="none"
             viewBox="0 0 56 100"
           >
-            <path 
-              d={`M ${endX} 0 C ${endX} 50, ${startX} 50, ${startX} 100`} 
-              fill="none" 
-              stroke={meta.color} 
-              strokeWidth="2" 
+            <path
+              d={`M ${endX} 0 C ${endX} 50, ${startX} 50, ${startX} 100`}
+              fill="none"
+              stroke={meta.color}
+              strokeWidth="2"
               vectorEffect="non-scaling-stroke"
               opacity={0.6}
             />
@@ -183,9 +234,9 @@ function CommitNode({
 
         {/* Main dot on the corresponding track */}
         <button
-          className={`gl-dot${isMain ? " gl-dot-main" : ""}`}
+          className={`gl-dot${isMain ? "gl-dot-main" : ""}`}
           style={{
-            left: xOffset - 5, /* center dot horizontally on line */
+            left: xOffset - 5 /* center dot horizontally on line */,
             borderColor: meta.color,
             background: isMain ? meta.color : "var(--ink)",
             boxShadow: `0 0 10px ${meta.color}40`,
@@ -281,7 +332,7 @@ export default function LogTimeline() {
             return (
               <button
                 key={f.value}
-                className={`gl-filter${on ? " on" : ""}`}
+                className={`gl-filter${on ? "on" : ""}`}
                 style={
                   on && tm
                     ? {
@@ -356,14 +407,22 @@ export default function LogTimeline() {
 
         {/* Commit list */}
         <AnimatePresence initial={false}>
-          {visible.map((entry, i) => (
-            <CommitNode
-              key={entry.id}
-              entry={entry}
-              index={i}
-              onClick={() => setDrawer(entry)}
-            />
-          ))}
+          {visible.map((entry, i) => {
+            const prevTrack = i > 0 ? visible[i - 1].track : entry.track;
+            const nextTrack =
+              i < visible.length - 1 ? visible[i + 1].track : entry.track;
+
+            return (
+              <CommitNode
+                key={entry.id}
+                prevTrack={prevTrack}
+                nextTrack={nextTrack}
+                entry={entry}
+                index={i}
+                onClick={() => setDrawer(entry)}
+              />
+            );
+          })}
         </AnimatePresence>
 
         {/* Bottom cap */}
