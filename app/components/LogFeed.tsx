@@ -126,7 +126,7 @@ export default function LogFeed() {
       <div className="log-header">
         <div>
           <p className="tag" data-i="04">
-            Log
+            Logs
           </p>
           <h2
             className="sec-h rv"

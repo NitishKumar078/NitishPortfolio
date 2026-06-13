@@ -515,7 +515,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ═══ LOG ═════════════════════════════════════════════════════ */}
+      {/* ═══ LOGS ════════════════════════════════════════════════════ */}
       <section id="logs" aria-labelledby="logs-heading">
         <LogFeed />
       </section>
