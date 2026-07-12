@@ -53,7 +53,7 @@ export default function Home() {
               LinkedIn ↗
             </a>
             <a
-              href="/nishkumar562_gmail_com.pdf"
+              href="/nishkumar562@gmail_com.pdf"
               download="Nitish_Kumar_Resume.pdf"
               className="btn btn-glow"
             >
