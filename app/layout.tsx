@@ -28,11 +28,11 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
-  title: "Nitish Kumar M — Software Developer",
+  title: "Nitish Kumar M </> Software Developer",
   description:
-    "Nitish Kumar M — Software Developer from Bengaluru. Building npm packages, Chrome extensions, .NET and React applications.",
+    "Nitish Kumar M </> Software Developer from Bengaluru. Building npm packages, Chrome extensions, .NET and React applications.",
   openGraph: {
-    title: "Nitish Kumar M — Software Developer",
+    title: "Nitish Kumar M </> Software Developer",
     description:
       "Software Developer from Bengaluru building npm packages, Chrome extensions, .NET and React apps.",
     url: "https://www.nishkumar.dev",
@@ -42,7 +42,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Nitish Kumar M — Software Developer",
+    title: "Nitish Kumar M </> Software Developer",
     description:
       "Software Developer from Bengaluru building npm packages, Chrome extensions, .NET and React apps.",
   },
@@ -68,4 +68,3 @@ export default function RootLayout({
     </html>
   );
 }
-

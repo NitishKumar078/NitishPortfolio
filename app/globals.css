@@ -389,7 +389,7 @@ nav {
   animation: fadeup 0.6s 0.1s forwards;
 }
 .hero-eyebrow::before {
-  content: "";
+  /* content: ""; */
   width: 22px;
   height: 1px;
   background: var(--neon);
