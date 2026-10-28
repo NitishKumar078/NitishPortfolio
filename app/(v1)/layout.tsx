@@ -1,7 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import { Bebas_Neue, DM_Sans, DM_Mono } from "next/font/google";
 import { SpeedInsights } from "@vercel/speed-insights/next";
-import "./globals.css";
+import "./v1/globals.css";
 
 const bebasNeue = Bebas_Neue({
   weight: "400",
@@ -35,7 +35,7 @@ export const metadata: Metadata = {
     title: "Nitish Kumar M </> Software Developer",
     description:
       "Software Developer from Bengaluru building npm packages, Chrome extensions, .NET and React apps.",
-    url: "https://www.nishkumar.dev",
+    url: "https://www.nishkumar.dev/v1",
     siteName: "Nitish Kumar M",
     locale: "en_US",
     type: "website",
@@ -53,7 +53,7 @@ export const metadata: Metadata = {
   },
 };
 
-export default function RootLayout({
+export default function V1Layout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return (

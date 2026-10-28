@@ -1,36 +1,39 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Nitish Kumar / Portfolio
 
-## Getting Started
+A responsive Next.js portfolio connecting Nitish’s websites, browser tools, applications, and open-source packages.
 
-First, run the development server:
+## Run locally
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+```sh
+npm install
+npm run dev -- --port 3003
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open http://localhost:3003. Use a different free port if needed. The production checks are `npm run lint` and `npm run build`.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Edit the content
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- `app/data/portfolio.ts`: contact and profile links, project cards, npm packages, and capabilities. Add projects to the typed `projects` array; category filters update automatically.
+- `app/page.tsx`: hero, introduction, about section, and contact copy.
+- `app/components/LogFeed.tsx`: dated development notes and their categories. Historical notes remain dated; update release statuses separately.
+- `app/globals.css`: shared layouts, interactions, and mobile breakpoints.
+- `app/clay.css`: claymorphism and maximalist art direction, material tokens, dimensional surfaces, and responsive theme refinements. Headings use Bricolage Grotesque; body copy uses DM Sans.
+- `app/layout.tsx`: metadata, fonts, canonical address, and existing Vercel Speed Insights.
+- `app/opengraph-image.tsx` and `app/icon.svg`: social preview and favicon.
+- `public/Nitish_Kumar_Frontend.pdf`: the existing downloadable résumé.
 
-## Learn More
+## Project artwork
 
-To learn more about Next.js, take a look at the following resources:
+`public/work/northline.webp` and `public/work/extensions.webp` are optimized captures of the actual local Demo Lab and Extensions websites, taken during this redesign. Refresh them when those sites change. MindMesh, Invoice-Book, and Spy use decorative CSS artwork, not purported application screenshots.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Demo Lab links to `https://www.demos.nishkumar.dev`; Extensions links to `https://www.extensions.nishkumar.dev`. Keep these synchronized with the other projects. Text Extractor is marked **in store review**, and Pure Anime **coming soon**; no install availability or usage metrics are invented.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Interactions and accessibility
 
-## Deploy on Vercel
+Project and note filters announce their result counts and expose their selected states. The mobile menu supports Escape, outside click, and automatic close after selection. Capabilities use native disclosure controls. Clipboard buttons report success and offer manual-copy guidance if access fails. Navigation has visible keyboard focus, a skip link, and touch-friendly controls. Reduced-motion preferences are respected, and content stays visible without JavaScript.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Contact links open the visitor’s email application or LinkedIn. There is no contact-form backend or simulated submission. No extra runtime dependencies were added for this redesign.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Deployment
+
+Build and deploy this existing Next.js project through its normal hosting workflow. Local changes do not update the live portfolio until deployed. Confirm the two showcase domains are connected before promoting the links publicly.

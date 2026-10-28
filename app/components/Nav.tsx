@@ -1,96 +1,110 @@
 "use client";
-import { useState, useEffect, useCallback } from "react";
+import { useEffect, useRef, useState } from "react";
+import { profile } from "../data/portfolio";
+import Icon from "./Icon";
+
+const links = [
+  { href: "#projects", label: "Work" },
+  { href: "#about", label: "About" },
+  { href: "#logs", label: "Notes" },
+  { href: profile.demos, label: "Demo Lab", external: true },
+  { href: profile.extensions, label: "Extensions", external: true },
+];
 
 export default function Nav() {
   const [open, setOpen] = useState(false);
-  const [scrolled, setScrolled] = useState(false);
-
+  const root = useRef<HTMLElement>(null);
+  const toggle = useRef<HTMLButtonElement>(null);
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 20);
-    window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
-  }, []);
-
-  useEffect(() => {
-    const onResize = () => {
-      if (window.innerWidth > 767) setOpen(false);
+    if (!open) return;
+    const onKey = (event: KeyboardEvent) => {
+      if (event.key === "Escape") {
+        setOpen(false);
+        toggle.current?.focus();
+      }
     };
+    const onPointer = (event: PointerEvent) => {
+      if (event.target instanceof Node && !root.current?.contains(event.target))
+        setOpen(false);
+    };
+    const onResize = () => {
+      if (window.innerWidth >= 1000) setOpen(false);
+    };
+    document.addEventListener("keydown", onKey);
+    document.addEventListener("pointerdown", onPointer);
     window.addEventListener("resize", onResize);
-    return () => window.removeEventListener("resize", onResize);
-  }, []);
-
-  useEffect(() => {
-    document.body.style.overflow = open ? "hidden" : "";
+    return () => {
+      document.removeEventListener("keydown", onKey);
+      document.removeEventListener("pointerdown", onPointer);
+      window.removeEventListener("resize", onResize);
+    };
   }, [open]);
-
-  const close = useCallback(() => setOpen(false), []);
-
-  const links = [
-    { href: "#about", label: "about" },
-    { href: "#projects", label: "projects" },
-    { href: "#skills", label: "skills" },
-    { href: "#logs", label: "logs" },
-    { href: "#contact", label: "contact" },
-  ];
-
   return (
-    <>
-      <nav
-        id="nav"
-        style={{
-          borderBottomColor: scrolled
-            ? "rgba(255,255,255,0.1)"
-            : "rgba(255,255,255,0.07)",
-        }}
-      >
-        <a className="logo" href="#">
-          <b>~/</b>nitish_kumar_m
+    <header
+      className="site-header"
+      ref={root}
+      onBlur={(event) => {
+        if (!event.currentTarget.contains(event.relatedTarget)) setOpen(false);
+      }}
+    >
+      <div className="nav-shell">
+        <a className="wordmark" href="#hero" aria-label="Nitish Kumar home">
+          nish<span>.</span>
+          <small>design & code</small>
         </a>
-
-        <ul className="navlinks" role="list">
-          {links.map((l) => (
-            <li key={l.href}>
-              <a href={l.href}>{l.label}</a>
-            </li>
+        <nav className="desktop-nav" aria-label="Main navigation">
+          {links.map((link) => (
+            <a
+              href={link.href}
+              key={link.href}
+              {...(link.external
+                ? { target: "_blank", rel: "noopener noreferrer" }
+                : {})}
+            >
+              {link.label}
+              {link.external && <Icon />}
+            </a>
           ))}
-        </ul>
-
-        <a className="nav-hire" href="mailto:nitishkumar078@gmail.com">
-          hire_me()
+        </nav>
+        <a className="nav-contact" href="#contact">
+          Let’s talk <Icon />
         </a>
-
         <button
-          className={`nav-burger${open ? " open" : ""}`}
-          id="burger"
-          aria-label="Toggle menu"
+          ref={toggle}
+          className={`menu-toggle ${open ? "is-open" : ""}`}
+          type="button"
+          aria-label={open ? "Close navigation" : "Open navigation"}
           aria-expanded={open}
-          onClick={() => setOpen((v) => !v)}
+          aria-controls="mobile-navigation"
+          onClick={() => setOpen(!open)}
         >
-          <span />
           <span />
           <span />
         </button>
-      </nav>
-
-      <div
-        className={`mobile-menu${open ? " open" : ""}`}
-        id="mobileMenu"
-        role="navigation"
+      </div>
+      <nav
+        id="mobile-navigation"
+        className="mobile-nav"
         aria-label="Mobile navigation"
+        hidden={!open}
       >
-        {links.map((l) => (
-          <a key={l.href} href={l.href} onClick={close}>
-            {l.label}
+        {links.map((link) => (
+          <a
+            href={link.href}
+            key={link.href}
+            onClick={() => setOpen(false)}
+            {...(link.external
+              ? { target: "_blank", rel: "noopener noreferrer" }
+              : {})}
+          >
+            {link.label}
+            <Icon />
           </a>
         ))}
-        <a
-          href="mailto:nitishkumar078@gmail.com"
-          className="mob-hire"
-          onClick={close}
-        >
-          hire_me()
+        <a href="#contact" onClick={() => setOpen(false)}>
+          Let’s talk <Icon />
         </a>
-      </div>
-    </>
+      </nav>
+    </header>
   );
 }

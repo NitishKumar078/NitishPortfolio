@@ -8,13 +8,13 @@ const ENTRIES = [
     type: "working-on" as FilterType,
     date: "2026-04-22",
     dateLabel: "Apr 22, 2026",
-    title: "Portfolio redesign — this page",
+    title: "Earlier portfolio experiments",
     body: (
       <>
-        Building a completely new version of my portfolio with{" "}
-        <strong>Bebas Neue + DM Mono</strong>, a full responsive system using{" "}
-        <code>clamp()</code> throughout, and now this living log feed so
-        visitors can see what I&apos;m actually working on day-to-day.
+        An earlier iteration of this portfolio explored{" "}
+        <strong>Bebas Neue + DM Mono</strong> and responsive type using{" "}
+        <code>clamp()</code>. It also introduced these development notes: a
+        place for the decisions and experiments behind the finished work.
       </>
     ),
     tags: ["html", "css", "design"],
@@ -125,15 +125,15 @@ export default function LogFeed() {
     <>
       <div className="log-header">
         <div>
-          <p className="tag" data-i="04">
-            Logs
-          </p>
+          <p className="section-label">Notes from the workbench</p>
           <h2
-            className="sec-h rv"
+            className="notes-title"
             id="logs-heading"
             style={{ marginBottom: 0 }}
           >
-            Activity feed.
+            Always making.
+            <br />
+            Always learning.
           </h2>
         </div>
         <div
@@ -146,6 +146,8 @@ export default function LogFeed() {
               key={f.value}
               className={`log-filter${active === f.value ? " active" : ""}`}
               data-filter={f.value}
+              type="button"
+              aria-pressed={active === f.value}
               onClick={() => setActive(f.value)}
             >
               {f.label}
@@ -157,7 +159,6 @@ export default function LogFeed() {
       <div
         className="log-feed rv3"
         id="logFeed"
-        role="feed"
         aria-label="Activity log entries"
       >
         {visible.length === 0 && (
@@ -165,9 +166,9 @@ export default function LogFeed() {
             No entries for this filter yet — check back soon.
           </div>
         )}
-        {visible.map((entry, idx) => (
+        {visible.map((entry) => (
           <article
-            key={idx}
+            key={entry.title}
             className="log-entry"
             data-type={entry.type}
             aria-label={`Log entry: ${entry.title}`}
@@ -206,7 +207,7 @@ export default function LogFeed() {
       </div>
 
       <div className="log-more rv">
-        <p className="log-count">
+        <p className="log-count" role="status">
           Showing <em>{visible.length}</em> of <em>{ENTRIES.length}</em> entries
         </p>
         <a
